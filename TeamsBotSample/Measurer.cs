@@ -14,13 +14,10 @@ namespace Microsoft.Psi.TeamsBot
     /// </summary>
     public class Measurer : ParticipantEngagementBotBase
     {
-        private const double BallIncrement = 0.2;
-        private const double BallGravity = 0.95;
         private const double BallWindowScale = 0.1;
 
         private double ballX = 0.0;
         private double ballY = 0.0;
-        private int numParticipants = 0;
         private Dictionary<string, StaticParticipant> staticParticipants;
 
         /// <summary>
@@ -52,7 +49,6 @@ namespace Microsoft.Psi.TeamsBot
             var num = video.Count;
             var theta = num % 2 == 0 ? Math.PI / 2 : Math.PI; // start top for odd, right for even number of participants
             var inc = Math.PI * 2 / num;
-            int i = 0;
 
             var participants = new Dictionary<string, Participant>();
             foreach (var frame in video)
@@ -61,39 +57,33 @@ namespace Microsoft.Psi.TeamsBot
                 if (!this.staticParticipants.ContainsKey(frame.Key))
                 {
                     this.staticParticipants.Add(frame.Key, new StaticParticipant());
+                    this.staticParticipants[frame.Key].TimeInMeeting.Start();
                 }
 
                 theta += inc;
-                i++;
             }
 
-            var nudgeX = 0.0;
-            var nudgeY = 0.0;
-            var overallTotalSpoken = speech.Sum(x => x.Value.Count);
-            if (overallTotalSpoken > 0)
+            // Checks if anyone is speaking
+            bool anyoneIsSpeaking = speech.Sum(x => x.Value.Count) > 0;
+            if (anyoneIsSpeaking)
             {
                 foreach (var s in speech)
                 {
                     if (participants.TryGetValue(s.Key, out Participant p))
                     {
-                        // activity proportion of total speaking within speechWindow (sum of participants is 1.0)
-                        var timesSpoken = s.Value.Count;
-                        p.Activity = Math.Max(0.0, Math.Min(1.0, (double)timesSpoken / overallTotalSpoken));
-                        this.staticParticipants[s.Key].TimeSpoken += 1;
+                        // Gets whether the participant is speaking
+                        bool isSpeaking = s.Value.Select(x => s.Key).Any();
+                        if (isSpeaking && !this.staticParticipants[s.Key].TimeSpoken.IsRunning)
+                        {
+                            this.staticParticipants[s.Key].TimeSpoken.Start();
+                        }
+                        else
+                        {
+                            this.staticParticipants[s.Key].TimeSpoken.Stop();
+                        }
                     }
                 }
             }
-
-            if (participants.Count > this.numParticipants)
-            {
-                Console.WriteLine(participants.ElementAt(this.numParticipants).Key);
-                Console.WriteLine(participants.ElementAt(this.numParticipants));
-                this.numParticipants += 1;
-            }
-
-            // nudge ball toward active speakers, plus gravitate to center
-            this.ballX = Math.Min(1.0, Math.Max(-1.0, this.ballX + (nudgeX * BallIncrement))) * BallGravity;
-            this.ballY = Math.Min(1.0, Math.Max(-1.0, this.ballY + (nudgeY * BallIncrement))) * BallGravity;
 
             return participants.Values;
         }

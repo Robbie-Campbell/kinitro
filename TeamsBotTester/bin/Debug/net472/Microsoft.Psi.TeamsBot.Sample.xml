@@ -24,26 +24,6 @@
         <member name="M:Microsoft.Psi.TeamsBot.Measurer.UpdateVisual(System.Collections.Generic.IEnumerable{Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.Participant},System.Drawing.Graphics)">
             <inheritdoc />
         </member>
-        <member name="T:Microsoft.Psi.TeamsBot.ParticipantEngagementBallBot">
-            <summary>
-            Represents a participant engagement component base class.
-            </summary>
-        </member>
-        <member name="M:Microsoft.Psi.TeamsBot.ParticipantEngagementBallBot.#ctor(Microsoft.Psi.Pipeline,System.TimeSpan,System.Int32,System.Int32)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Microsoft.Psi.TeamsBot.ParticipantEngagementBallBot"/> class.
-            </summary>
-            <param name="pipeline">The pipeline to add the component to.</param>
-            <param name="interval">Interval at which to render and emit frames of the rendered visual.</param>
-            <param name="screenWidth">Width at which to render the shared screen.</param>
-            <param name="screenHeight">Height at which to render the shared screen.</param>
-        </member>
-        <member name="M:Microsoft.Psi.TeamsBot.ParticipantEngagementBallBot.UpdateModel(System.Collections.Generic.Dictionary{System.String,Microsoft.Psi.Shared{Microsoft.Psi.Imaging.Image}},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.DateTime}},System.DateTime)">
-            <inheritdoc />
-        </member>
-        <member name="M:Microsoft.Psi.TeamsBot.ParticipantEngagementBallBot.UpdateVisual(System.Collections.Generic.IEnumerable{Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.Participant},System.Drawing.Graphics)">
-            <inheritdoc />
-        </member>
         <member name="T:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase">
             <summary>
             Represents a participant engagement component base class.
@@ -164,26 +144,6 @@
             <param name="originatingTime">Current originating time.</param>
             <param name="emitter">The emitter to post to.</param>
         </member>
-        <member name="T:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.StaticParticipant">
-            <summary>
-            This maintains the persistant participant data.
-            </summary>
-        </member>
-        <member name="M:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.StaticParticipant.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.StaticParticipant"/> class.
-            </summary>
-        </member>
-        <member name="P:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.StaticParticipant.TimeSpoken">
-            <summary>
-            Gets or sets time spent speaking.
-            </summary>
-        </member>
-        <member name="P:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.StaticParticipant.TimeInMeeting">
-            <summary>
-            Gets or sets time spent in meeting.
-            </summary>
-        </member>
         <member name="T:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.Participant">
             <summary>
             Represents a meeting participant.
@@ -235,26 +195,25 @@
             Gets or sets recent (voice) activity level.
             </summary>
         </member>
-        <member name="T:Microsoft.Psi.TeamsBot.ParticipantEngagementScaleBot">
+        <member name="T:Microsoft.Psi.TeamsBot.StaticParticipant">
             <summary>
-            Represents a participant engagement component base class.
+            This maintains the persistant participant data.
             </summary>
         </member>
-        <member name="M:Microsoft.Psi.TeamsBot.ParticipantEngagementScaleBot.#ctor(Microsoft.Psi.Pipeline,System.TimeSpan,System.Int32,System.Int32,System.Boolean)">
+        <member name="M:Microsoft.Psi.TeamsBot.StaticParticipant.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:Microsoft.Psi.TeamsBot.ParticipantEngagementScaleBot"/> class.
+            Initializes a new instance of the <see cref="T:Microsoft.Psi.TeamsBot.StaticParticipant"/> class.
             </summary>
-            <param name="pipeline">The pipeline to add the component to.</param>
-            <param name="interval">Interval at which to render and emit frames of the rendered visual.</param>
-            <param name="screenWidth">Width at which to render the shared screen.</param>
-            <param name="screenHeight">Height at which to render the shared screen.</param>
-            <param name="varyHeights">Whether to vary the heights of participant video frames.</param>
         </member>
-        <member name="M:Microsoft.Psi.TeamsBot.ParticipantEngagementScaleBot.UpdateModel(System.Collections.Generic.Dictionary{System.String,Microsoft.Psi.Shared{Microsoft.Psi.Imaging.Image}},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.DateTime}},System.DateTime)">
-            <inheritdoc />
+        <member name="P:Microsoft.Psi.TeamsBot.StaticParticipant.TimeSpoken">
+            <summary>
+            Gets or sets time spent speaking.
+            </summary>
         </member>
-        <member name="M:Microsoft.Psi.TeamsBot.ParticipantEngagementScaleBot.UpdateVisual(System.Collections.Generic.IEnumerable{Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.Participant},System.Drawing.Graphics)">
-            <inheritdoc />
+        <member name="P:Microsoft.Psi.TeamsBot.StaticParticipant.TimeInMeeting">
+            <summary>
+            Gets or sets time spent in meeting.
+            </summary>
         </member>
     </members>
 </doc>

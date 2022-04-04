@@ -303,31 +303,6 @@ namespace Microsoft.Psi.TeamsBot
         }
 
         /// <summary>
-        /// This maintains the persistant participant data.
-        /// </summary>
-        protected class StaticParticipant
-        {
-            /// <summary>
-            /// Initializes a new instance of the <see cref="StaticParticipant"/> class.
-            /// </summary>
-            public StaticParticipant()
-            {
-                this.TimeSpoken = 0;
-                this.TimeInMeeting = 0;
-            }
-
-            /// <summary>
-            /// Gets or sets time spent speaking.
-            /// </summary>
-            public int TimeSpoken { get; set; }
-
-            /// <summary>
-            /// Gets or sets time spent in meeting.
-            /// </summary>
-            public int TimeInMeeting { get; set; }
-        }
-
-        /// <summary>
         /// Represents a meeting participant.
         /// </summary>
         protected class Participant
