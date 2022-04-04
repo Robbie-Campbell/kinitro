@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TeamsBotTester</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Psi.TeamsBot.Program">
+            <summary>
+            Teams Bot test runner.
+            </summary>
+        </member>
+    </members>
+</doc>

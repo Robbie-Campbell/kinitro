@@ -1,0 +1,240 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Psi.TeamsBot.Sample</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Psi.TeamsBot.Measurer">
+            <summary>
+            Represents a participant engagement component base class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Psi.TeamsBot.Measurer.#ctor(Microsoft.Psi.Pipeline,System.TimeSpan,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Psi.TeamsBot.Measurer"/> class.
+            </summary>
+            <param name="pipeline">The pipeline to add the component to.</param>
+            <param name="interval">Interval at which to render and emit frames of the rendered visual.</param>
+            <param name="screenWidth">Width at which to render the shared screen.</param>
+            <param name="screenHeight">Height at which to render the shared screen.</param>
+        </member>
+        <member name="M:Microsoft.Psi.TeamsBot.Measurer.UpdateModel(System.Collections.Generic.Dictionary{System.String,Microsoft.Psi.Shared{Microsoft.Psi.Imaging.Image}},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.DateTime}},System.DateTime)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.Psi.TeamsBot.Measurer.UpdateVisual(System.Collections.Generic.IEnumerable{Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.Participant},System.Drawing.Graphics)">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.Psi.TeamsBot.ParticipantEngagementBallBot">
+            <summary>
+            Represents a participant engagement component base class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Psi.TeamsBot.ParticipantEngagementBallBot.#ctor(Microsoft.Psi.Pipeline,System.TimeSpan,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Psi.TeamsBot.ParticipantEngagementBallBot"/> class.
+            </summary>
+            <param name="pipeline">The pipeline to add the component to.</param>
+            <param name="interval">Interval at which to render and emit frames of the rendered visual.</param>
+            <param name="screenWidth">Width at which to render the shared screen.</param>
+            <param name="screenHeight">Height at which to render the shared screen.</param>
+        </member>
+        <member name="M:Microsoft.Psi.TeamsBot.ParticipantEngagementBallBot.UpdateModel(System.Collections.Generic.Dictionary{System.String,Microsoft.Psi.Shared{Microsoft.Psi.Imaging.Image}},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.DateTime}},System.DateTime)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.Psi.TeamsBot.ParticipantEngagementBallBot.UpdateVisual(System.Collections.Generic.IEnumerable{Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.Participant},System.Drawing.Graphics)">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase">
+            <summary>
+            Represents a participant engagement component base class.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.EnergyThreshold">
+            <summary>
+            Acoustic log energy threshold used for voice activity detection.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.ThumbnailWindowScale">
+            <summary>
+            Video thumbnail scale relative to window size.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.FrameMarginWindowScale">
+            <summary>
+            Video frame margin in pixels.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.ImageBorderThickness">
+            <summary>
+            Video image border thickness in pixels.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.#ctor(Microsoft.Psi.Pipeline,System.TimeSpan,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase"/> class.
+            </summary>
+            <param name="pipeline">The pipeline to add the component to.</param>
+            <param name="interval">Interval at which to render and emit frames of the rendered visual.</param>
+            <param name="screenWidth">Width at which to render the shared screen.</param>
+            <param name="screenHeight">Height at which to render the shared screen.</param>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.VideoIn">
+            <inheritdoc/>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.AudioIn">
+            <inheritdoc/>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.EnableScreenSharing">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.ScreenShareSize">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.ScreenShareOut">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.EnableVideoOutput">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.VideoSize">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.VideoOut">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.EnableAudioOutput">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.AudioOut">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.HighlightColor">
+            <summary>
+            Gets hilight color used for video frames and other colored elements.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.ScreenWidth">
+            <summary>
+            Gets pixel width of the output screen.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.ScreenHeight">
+            <summary>
+            Gets pixel height of the output screen.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.FrameMargin">
+            <summary>
+            Gets margin within which to render video frame.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.RenderVideoFrame(Microsoft.Psi.Imaging.Image,System.Drawing.Pen,System.Drawing.Rectangle,System.Drawing.Rectangle,System.String,System.Drawing.Graphics)">
+            <summary>
+            Render participant video frame.
+            </summary>
+            <param name="image">Video image.</param>
+            <param name="pen">Pen with wich to draw image frame.</param>
+            <param name="src">Source rectangle.</param>
+            <param name="dest">Destination rectangle.</param>
+            <param name="label">Label text.</param>
+            <param name="graphics">Graphics context into which to render.</param>
+        </member>
+        <member name="M:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.UpdateModel(System.Collections.Generic.Dictionary{System.String,Microsoft.Psi.Shared{Microsoft.Psi.Imaging.Image}},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.DateTime}},System.DateTime)">
+            <summary>
+            Update internal model.
+            </summary>
+            <param name="video">Current participant video frames.</param>
+            <param name="speech">Current participant speech activitiy.</param>
+            <param name="currentTime">Current pipeline time.</param>
+            <returns>Current meeting participants.</returns>
+        </member>
+        <member name="M:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.UpdateVisual(System.Collections.Generic.IEnumerable{Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.Participant},System.Drawing.Graphics)">
+            <summary>
+            Generate a frame of shared screen to be emitted by the bot.
+            </summary>
+            <param name="participants">Current meeting participants.</param>
+            <param name="graphics">Graphics context into which to render.</param>
+        </member>
+        <member name="M:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.ProduceScreenShare(System.Collections.Generic.Dictionary{System.String,Microsoft.Psi.Shared{Microsoft.Psi.Imaging.Image}},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.DateTime}},System.DateTime,Microsoft.Psi.Emitter{Microsoft.Psi.Shared{Microsoft.Psi.Imaging.Image}})">
+            <summary>
+            Create screen share video frame.
+            </summary>
+            <param name="video">Current participant video frames.</param>
+            <param name="speech">Current participant speech activity.</param>
+            <param name="originatingTime">Current originating time.</param>
+            <param name="emitter">The emitter to post to.</param>
+        </member>
+        <member name="T:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.Participant">
+            <summary>
+            Represents a meeting participant.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.Participant.#ctor(Microsoft.Psi.Shared{Microsoft.Psi.Imaging.Image},System.Double,System.Double,System.Double,System.Double,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.Participant"/> class.
+            </summary>
+            <param name="thumbnail">Video thumbnail.</param>
+            <param name="x">Horizontal position of video thumbnail as vector from center.</param>
+            <param name="y">Vertical position of video thumbnail as vector from center.</param>
+            <param name="width">Width of video thumbnail as unit screen width.</param>
+            <param name="height">Height of video thumbnail as unit screen height.</param>
+            <param name="label">Label text.</param>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.Participant.X">
+            <summary>
+            Gets horizontal position of video thumbnail as vector from center.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.Participant.Y">
+            <summary>
+            Gets vertical position of video thumbnail as vector from center.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.Participant.Label">
+            <summary>
+            Gets label text.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.Participant.Thumbnail">
+            <summary>
+            Gets latest video thumbnail.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.Participant.Width">
+            <summary>
+            Gets or sets width of video thumbnail as unit screen width.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.Participant.Height">
+            <summary>
+            Gets or sets height of video thumbnail as unit screen height.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.Participant.Activity">
+            <summary>
+            Gets or sets recent (voice) activity level.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Psi.TeamsBot.ParticipantEngagementScaleBot">
+            <summary>
+            Represents a participant engagement component base class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Psi.TeamsBot.ParticipantEngagementScaleBot.#ctor(Microsoft.Psi.Pipeline,System.TimeSpan,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Psi.TeamsBot.ParticipantEngagementScaleBot"/> class.
+            </summary>
+            <param name="pipeline">The pipeline to add the component to.</param>
+            <param name="interval">Interval at which to render and emit frames of the rendered visual.</param>
+            <param name="screenWidth">Width at which to render the shared screen.</param>
+            <param name="screenHeight">Height at which to render the shared screen.</param>
+            <param name="varyHeights">Whether to vary the heights of participant video frames.</param>
+        </member>
+        <member name="M:Microsoft.Psi.TeamsBot.ParticipantEngagementScaleBot.UpdateModel(System.Collections.Generic.Dictionary{System.String,Microsoft.Psi.Shared{Microsoft.Psi.Imaging.Image}},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.DateTime}},System.DateTime)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.Psi.TeamsBot.ParticipantEngagementScaleBot.UpdateVisual(System.Collections.Generic.IEnumerable{Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.Participant},System.Drawing.Graphics)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

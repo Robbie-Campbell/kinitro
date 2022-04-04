@@ -1,0 +1,10 @@
+C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\PsiBot\PsiBot.Model\bin\Debug\netstandard2.0\PsiBot.Model.deps.json
+C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\PsiBot\PsiBot.Model\bin\Debug\netstandard2.0\PsiBot.Model.dll
+C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\PsiBot\PsiBot.Model\bin\Debug\netstandard2.0\PsiBot.Model.pdb
+C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\PsiBot\PsiBot.Model\obj\Debug\netstandard2.0\PsiBot.Model.csproj.AssemblyReference.cache
+C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\PsiBot\PsiBot.Model\obj\Debug\netstandard2.0\PsiBot.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\PsiBot\PsiBot.Model\obj\Debug\netstandard2.0\PsiBot.Model.AssemblyInfoInputs.cache
+C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\PsiBot\PsiBot.Model\obj\Debug\netstandard2.0\PsiBot.Model.AssemblyInfo.cs
+C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\PsiBot\PsiBot.Model\obj\Debug\netstandard2.0\PsiBot.Model.csproj.CoreCompileInputs.cache
+C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\PsiBot\PsiBot.Model\obj\Debug\netstandard2.0\PsiBot.Model.dll
+C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\PsiBot\PsiBot.Model\obj\Debug\netstandard2.0\PsiBot.Model.pdb

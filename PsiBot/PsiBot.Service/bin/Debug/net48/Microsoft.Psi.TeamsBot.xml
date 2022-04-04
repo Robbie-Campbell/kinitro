@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Psi.TeamsBot</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Psi.TeamsBot.ITeamsBot">
+            <summary>
+            Represents a Teams bot component.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ITeamsBot.VideoIn">
+            <summary>
+            Gets the receiver of participant video input with timestamps.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ITeamsBot.AudioIn">
+            <summary>
+            Gets the receiver of participant audio input with timestamps.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ITeamsBot.EnableScreenSharing">
+            <summary>
+            Gets a value indicating whether to enable screen sharing.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ITeamsBot.ScreenShareSize">
+            <summary>
+            Gets size of shared screen (1920×1080 1280×720 960×540 640×360 480×270 424×240 320×180).
+            </summary>
+            <remarks>See https://microsoftgraph.github.io/microsoft-graph-comms-samples/docs/bot_media/Microsoft.Skype.Bots.Media.VideoFormat.html
+            for the list of video formats and sizes provided in Microsoft.Skype.Bots.Media.</remarks>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ITeamsBot.ScreenShareOut">
+            <summary>
+            Gets the emitter that generates bot shared screen output.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ITeamsBot.EnableVideoOutput">
+            <summary>
+            Gets a value indicating whether to enable video output.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ITeamsBot.VideoSize">
+            <summary>
+            Gets size of video (1920×1080 1280×720 960×540 640×360 480×270 424×240 320×180).
+            </summary>
+            <remarks>See https://microsoftgraph.github.io/microsoft-graph-comms-samples/docs/bot_media/Microsoft.Skype.Bots.Media.VideoFormat.html
+            for the list of video formats and sizes provided in Microsoft.Skype.Bots.Media.</remarks>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ITeamsBot.VideoOut">
+            <summary>
+            Gets the emitter that generates bot video output.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ITeamsBot.EnableAudioOutput">
+            <summary>
+            Gets a value indicating whether to enable audio output.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.ITeamsBot.AudioOut">
+            <summary>
+            Gets the emitter that generates bot audio output.
+            </summary>
+        </member>
+    </members>
+</doc>

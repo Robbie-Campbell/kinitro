@@ -1,0 +1,17 @@
+C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\TeamsBotSample\bin\Debug\netstandard2.0\icon.png
+C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\TeamsBotSample\bin\Debug\netstandard2.0\Microsoft.Psi.TeamsBot.Sample.deps.json
+C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\TeamsBotSample\bin\Debug\netstandard2.0\Microsoft.Psi.TeamsBot.Sample.dll
+C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\TeamsBotSample\bin\Debug\netstandard2.0\Microsoft.Psi.TeamsBot.Sample.pdb
+C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\TeamsBotSample\bin\Debug\netstandard2.0\Microsoft.Psi.TeamsBot.Sample.xml
+C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\TeamsBotSample\bin\Debug\netstandard2.0\Microsoft.Psi.TeamsBot.dll
+C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\TeamsBotSample\bin\Debug\netstandard2.0\Microsoft.Psi.TeamsBot.pdb
+C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\TeamsBotSample\bin\Debug\netstandard2.0\Microsoft.Psi.TeamsBot.xml
+C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\TeamsBotSample\obj\Debug\netstandard2.0\TeamsBotSample.csproj.AssemblyReference.cache
+C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\TeamsBotSample\obj\Debug\netstandard2.0\TeamsBotSample.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\TeamsBotSample\obj\Debug\netstandard2.0\TeamsBotSample.AssemblyInfoInputs.cache
+C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\TeamsBotSample\obj\Debug\netstandard2.0\TeamsBotSample.AssemblyInfo.cs
+C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\TeamsBotSample\obj\Debug\netstandard2.0\TeamsBotSample.csproj.CoreCompileInputs.cache
+C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\TeamsBotSample\obj\Debug\netstandard2.0\TeamsBotSample.csproj.CopyComplete
+C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\TeamsBotSample\obj\Debug\netstandard2.0\Microsoft.Psi.TeamsBot.Sample.dll
+C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\TeamsBotSample\obj\Debug\netstandard2.0\Microsoft.Psi.TeamsBot.Sample.xml
+C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\TeamsBotSample\obj\Debug\netstandard2.0\Microsoft.Psi.TeamsBot.Sample.pdb
