@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Oma0NaIKmKKpp7eWyGUu3u3YLs9RY2nBqqFmLcsMMUDHZuYsKja3jU68UxttFKTxyeV9u12TD3gVxOoALrKWpw==",
+  "dgSpecHash": "vWLLgUYwFyzkVt+69UEiD23cKjfNlSUQl5BwcU1A6WcET2vg91lIoFwW2C8dQk/vxZwE3GJftdOvBmCRXIJ50Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\robbi\\microsoft-graph-comms-samples\\Samples\\PublicSamples\\PsiBot\\PsiBot\\PsiBot.Service\\PsiBot.Service.csproj",
   "expectedPackageFiles": [

@@ -4,6 +4,18 @@
         <name>Microsoft.Psi.TeamsBot.Sample</name>
     </assembly>
     <members>
+        <member name="T:Microsoft.Psi.TeamsBot.DisplayDataController">
+            <summary>
+            Generates a URL for the display of user participation data.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Psi.TeamsBot.DisplayDataController.GetParticipantData(System.String)">
+            <summary>
+            Gets the data by request of a given participant.
+            </summary>
+            <param name="id">The id of the participant.</param>
+            <returns>The Participants Data.</returns>
+        </member>
         <member name="T:Microsoft.Psi.TeamsBot.Measurer">
             <summary>
             Represents a participant engagement component base class.
@@ -18,11 +30,38 @@
             <param name="screenWidth">Width at which to render the shared screen.</param>
             <param name="screenHeight">Height at which to render the shared screen.</param>
         </member>
+        <member name="M:Microsoft.Psi.TeamsBot.Measurer.GetParticipantDataByID(System.String)">
+            <summary>
+            Gets the participant data by ID.
+            </summary>
+            <param name="id">The id of the participant.</param>
+            <returns>The participant and their data.</returns>
+        </member>
         <member name="M:Microsoft.Psi.TeamsBot.Measurer.UpdateModel(System.Collections.Generic.Dictionary{System.String,Microsoft.Psi.Shared{Microsoft.Psi.Imaging.Image}},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.DateTime}},System.DateTime)">
             <inheritdoc />
         </member>
         <member name="M:Microsoft.Psi.TeamsBot.Measurer.UpdateVisual(System.Collections.Generic.IEnumerable{Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.Participant},System.Drawing.Graphics)">
             <inheritdoc />
+        </member>
+        <member name="T:Microsoft.Psi.TeamsBot.StaticParticipant">
+            <summary>
+            This maintains the persistant participant data.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Psi.TeamsBot.StaticParticipant.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Psi.TeamsBot.StaticParticipant"/> class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.StaticParticipant.TimeSpoken">
+            <summary>
+            Gets or sets time spent speaking.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.StaticParticipant.TimeInMeeting">
+            <summary>
+            Gets or sets time spent in meeting.
+            </summary>
         </member>
         <member name="T:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase">
             <summary>
@@ -193,26 +232,6 @@
         <member name="P:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.Participant.Activity">
             <summary>
             Gets or sets recent (voice) activity level.
-            </summary>
-        </member>
-        <member name="T:Microsoft.Psi.TeamsBot.StaticParticipant">
-            <summary>
-            This maintains the persistant participant data.
-            </summary>
-        </member>
-        <member name="M:Microsoft.Psi.TeamsBot.StaticParticipant.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Microsoft.Psi.TeamsBot.StaticParticipant"/> class.
-            </summary>
-        </member>
-        <member name="P:Microsoft.Psi.TeamsBot.StaticParticipant.TimeSpoken">
-            <summary>
-            Gets or sets time spent speaking.
-            </summary>
-        </member>
-        <member name="P:Microsoft.Psi.TeamsBot.StaticParticipant.TimeInMeeting">
-            <summary>
-            Gets or sets time spent in meeting.
             </summary>
         </member>
     </members>

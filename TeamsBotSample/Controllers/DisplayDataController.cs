@@ -1,13 +1,12 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT license.
 
-namespace PsiBot.Services.Controllers
+namespace Microsoft.Psi.TeamsBot
 {
     using System.Collections.Generic;
     using System.Net.Http;
     using System.Text;
     using Microsoft.AspNetCore.Mvc;
-    using Microsoft.Psi.TeamsBot;
 
     /// <summary>
     /// Generates a URL for the display of user participation data.
@@ -22,7 +21,7 @@ namespace PsiBot.Services.Controllers
         /// <param name="id">The id of the participant.</param>
         /// <returns>The Participants Data.</returns>
         [HttpGet("{id}")]
-        public StaticParticipant GetParticipantData(string id)
+        public static StaticParticipant GetParticipantData(string id)
         {
             return Measurer.GetParticipantDataByID(id);
         }

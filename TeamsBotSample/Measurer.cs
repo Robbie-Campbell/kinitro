@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT license.
 
+// One of the frame ID's: e4bde442-4ff4-47ad-be34-5540d94ac21c.
 namespace Microsoft.Psi.TeamsBot
 {
     using System;
@@ -15,10 +16,10 @@ namespace Microsoft.Psi.TeamsBot
     public class Measurer : ParticipantEngagementBotBase
     {
         private const double BallWindowScale = 0.1;
+        private static Dictionary<string, StaticParticipant> staticParticipants = new Dictionary<string, StaticParticipant>();
 
         private double ballX = 0.0;
         private double ballY = 0.0;
-        private Dictionary<string, StaticParticipant> staticParticipants;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Measurer"/> class.
@@ -30,7 +31,18 @@ namespace Microsoft.Psi.TeamsBot
         public Measurer(Pipeline pipeline, TimeSpan interval, int screenWidth, int screenHeight)
             : base(pipeline, interval, screenWidth, screenHeight)
         {
-            this.staticParticipants = new Dictionary<string, StaticParticipant>();
+        }
+
+        private static Dictionary<string, StaticParticipant> StaticParticipants { get => staticParticipants; }
+
+        /// <summary>
+        /// Gets the participant data by ID.
+        /// </summary>
+        /// <param name="id">The id of the participant.</param>
+        /// <returns>The participant and their data.</returns>
+        public static StaticParticipant GetParticipantDataByID(string id)
+        {
+            return StaticParticipants[id];
         }
 
         /// <inheritdoc />
@@ -54,10 +66,10 @@ namespace Microsoft.Psi.TeamsBot
             foreach (var frame in video)
             {
                 participants.Add(frame.Key, new Participant(frame.Value, Math.Sin(theta), Math.Cos(theta), ThumbnailWindowScale, ThumbnailWindowScale));
-                if (!this.staticParticipants.ContainsKey(frame.Key))
+                if (!StaticParticipants.ContainsKey(frame.Key))
                 {
-                    this.staticParticipants.Add(frame.Key, new StaticParticipant());
-                    this.staticParticipants[frame.Key].TimeInMeeting.Start();
+                    StaticParticipants.Add(frame.Key, new StaticParticipant());
+                    StaticParticipants[frame.Key].TimeInMeeting.Start();
                 }
 
                 theta += inc;
@@ -73,13 +85,13 @@ namespace Microsoft.Psi.TeamsBot
                     {
                         // Gets whether the participant is speaking
                         bool isSpeaking = s.Value.Select(x => s.Key).Any();
-                        if (isSpeaking && !this.staticParticipants[s.Key].TimeSpoken.IsRunning)
+                        if (isSpeaking && !StaticParticipants[s.Key].TimeSpoken.IsRunning)
                         {
-                            this.staticParticipants[s.Key].TimeSpoken.Start();
+                            StaticParticipants[s.Key].TimeSpoken.Start();
                         }
                         else
                         {
-                            this.staticParticipants[s.Key].TimeSpoken.Stop();
+                            StaticParticipants[s.Key].TimeSpoken.Stop();
                         }
                     }
                 }
