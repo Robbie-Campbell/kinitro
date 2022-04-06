@@ -17,6 +17,7 @@ namespace Microsoft.Psi.TeamsBot
     {
         private const double BallWindowScale = 0.1;
         private static Dictionary<string, StaticParticipant> staticParticipants = new Dictionary<string, StaticParticipant>();
+        private string webURL = "https://localhost:8080/data/";
 
         private double ballX = 0.0;
         private double ballY = 0.0;
@@ -75,6 +76,7 @@ namespace Microsoft.Psi.TeamsBot
                 {
                     StaticParticipants.Add(frame.Key, new StaticParticipant());
                     StaticParticipants[frame.Key].TimeInMeeting.Start();
+                    string webLink = webURL + frame.Key;
                 }
 
                 theta += inc;
