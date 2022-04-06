@@ -42,7 +42,12 @@ namespace Microsoft.Psi.TeamsBot
         /// <returns>The participant and their data.</returns>
         public static StaticParticipant GetParticipantDataByID(string id)
         {
-            return StaticParticipants[id];
+            if (StaticParticipants.ContainsKey(id))
+            {
+                return StaticParticipants[id];
+            }
+
+            return null;
         }
 
         /// <inheritdoc />
