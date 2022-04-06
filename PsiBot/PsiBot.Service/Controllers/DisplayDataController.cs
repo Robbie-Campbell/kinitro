@@ -26,5 +26,23 @@ namespace PsiBot.Services.Controllers
         {
             return Measurer.GetParticipantDataByID(id);
         }
+
+        /// <summary>
+        /// Gets data for testing in the api.
+        /// </summary>
+        /// <param name="id">The id requested.</param>
+        /// <returns>A single participant.</returns>
+        [HttpGet("test/{id}")]
+
+        public StaticParticipant GetTestData(string id) {
+            Dictionary<string, StaticParticipant> staticParticipants = new Dictionary<string, StaticParticipant>();
+            staticParticipants.Add("1234", new StaticParticipant());
+            staticParticipants["1234"].TimeInMeeting.Start();
+            staticParticipants["1234"].TimeSpoken.Start();
+            staticParticipants.Add("12345", new StaticParticipant());
+            staticParticipants["12345"].TimeInMeeting.Start();
+            staticParticipants["12345"].TimeSpoken.Start();
+            return staticParticipants[id];
+        }
     }
 }

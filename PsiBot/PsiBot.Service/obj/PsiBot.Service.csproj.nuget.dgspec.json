@@ -140,6 +140,10 @@
               "target": "Package",
               "version": "[2.1.7, )"
             },
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.AspNetCore.HttpsPolicy": {
               "target": "Package",
               "version": "[2.1.1, )"
