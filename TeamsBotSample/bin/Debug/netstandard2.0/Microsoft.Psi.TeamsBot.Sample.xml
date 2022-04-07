@@ -30,6 +30,13 @@
             <param name="screenWidth">Width at which to render the shared screen.</param>
             <param name="screenHeight">Height at which to render the shared screen.</param>
         </member>
+        <member name="M:Microsoft.Psi.TeamsBot.Measurer.UpdateParticipantName(System.String,System.String)">
+            <summary>
+            Updates the name of a participant.
+            </summary>
+            <param name="id">The id of the participant.</param>
+            <param name="name">The name of the participant.</param>
+        </member>
         <member name="M:Microsoft.Psi.TeamsBot.Measurer.GetParticipantDataByID(System.String)">
             <summary>
             Gets the participant data by ID.
@@ -61,6 +68,11 @@
         <member name="P:Microsoft.Psi.TeamsBot.StaticParticipant.TimeInMeeting">
             <summary>
             Gets or sets time spent in meeting.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.StaticParticipant.ParticipantName">
+            <summary>
+            Gets or sets the id of the participant.
             </summary>
         </member>
         <member name="T:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase">

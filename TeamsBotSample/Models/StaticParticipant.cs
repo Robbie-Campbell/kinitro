@@ -18,6 +18,7 @@ namespace Microsoft.Psi.TeamsBot
         {
             this.TimeSpoken = new Stopwatch();
             this.TimeInMeeting = new Stopwatch();
+            this.ParticipantName = string.Empty;
         }
 
         /// <summary>
@@ -29,5 +30,10 @@ namespace Microsoft.Psi.TeamsBot
         /// Gets or sets time spent in meeting.
         /// </summary>
         public Stopwatch TimeInMeeting { get; set; }
+
+        /// <summary>
+        /// Gets or sets the id of the participant.
+        /// </summary>
+        public string ParticipantName { get; set; }
     }
 }

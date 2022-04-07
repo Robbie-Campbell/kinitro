@@ -12,6 +12,7 @@
     import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
     export default {
         name: 'DisplayData',
+        emits: ['nameRecieved'],
         components: {
             'PulseLoader': PulseLoader,
         },
@@ -35,7 +36,7 @@
             updateData() {
                 const id = this.$route.params.slug;
                 return axios
-                .get(`https://9ab1-82-24-11-13.ngrok.io/api/displaydata/${id}`)
+                .get(`https://bb31-82-24-11-13.ngrok.io/api/displaydata/${id}`)
                     .then((response) => {
                         this.participant = response.data;
                     }).finally(() => (this.loading = false))
@@ -64,6 +65,7 @@
                 this.updateData();
                 if (this.participant['timeSpoken']) {
                     this.loading = false;
+                    this.$emit("nameRecieved", this.participant['participantName']);
                     this.pie.data.datasets[0].data = [this.participant['timeSpoken']['elapsedMilliseconds'], this.participant['timeInMeeting']['elapsedMilliseconds']];
                 }
                 this.pie.update();

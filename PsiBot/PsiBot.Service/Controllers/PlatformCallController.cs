@@ -54,7 +54,6 @@ namespace PsiBot.Services.Controllers
             _logger.Info(log);
 
             var response = await _botService.Client.ProcessNotificationAsync(ConvertHttpRequestToHttpRequestMessage(this.Request)).ConfigureAwait(false);
-
             var content = response.Content == null ? null : await response.Content?.ReadAsStringAsync();
             return Ok(content);
         }

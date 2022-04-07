@@ -20,6 +20,8 @@ namespace PsiBot.Services.Bot
     using Microsoft.Psi.Components;
     using Microsoft.Psi.Imaging;
     using Microsoft.Skype.Bots.Media;
+    using Microsoft.Psi.TeamsBot;
+
 
     /// <summary>
     /// Media frame source component.
@@ -108,8 +110,8 @@ namespace PsiBot.Services.Bot
                     var identity = CallHandler.TryGetParticipantIdentity(participant);
                     if (identity != null)
                     {
-                        
                         buffers.Add(identity.Id, (new AudioBuffer(data, audioFormat), audioFrameTimestamp));
+                        Measurer.UpdateParticipantName(identity.Id, identity.DisplayName);
                     }
                     else
                     {

@@ -37,6 +37,16 @@ namespace Microsoft.Psi.TeamsBot
         private static Dictionary<string, StaticParticipant> StaticParticipants { get => staticParticipants; }
 
         /// <summary>
+        /// Updates the name of a participant.
+        /// </summary>
+        /// <param name="id">The id of the participant.</param>
+        /// <param name="name">The name of the participant.</param>
+        public static void UpdateParticipantName(string id, string name)
+        {
+            staticParticipants[id].ParticipantName = name;
+        }
+
+        /// <summary>
         /// Gets the participant data by ID.
         /// </summary>
         /// <param name="id">The id of the participant.</param>
@@ -76,7 +86,7 @@ namespace Microsoft.Psi.TeamsBot
                 {
                     StaticParticipants.Add(frame.Key, new StaticParticipant());
                     StaticParticipants[frame.Key].TimeInMeeting.Start();
-                    string webLink = webURL + frame.Key;
+                    string webLink = this.webURL + frame.Key;
                 }
 
                 theta += inc;

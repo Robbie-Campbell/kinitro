@@ -251,6 +251,18 @@
               "target": "Package",
               "version": "[2.1.3, )"
             },
+            "Microsoft.Bot.Builder.Dialogs": {
+              "target": "Package",
+              "version": "[4.15.2, )"
+            },
+            "Microsoft.Bot.Builder.Dialogs.Declarative": {
+              "target": "Package",
+              "version": "[4.15.2, )"
+            },
+            "Microsoft.Bot.Connector": {
+              "target": "Package",
+              "version": "[4.15.2, )"
+            },
             "Microsoft.CodeAnalysis.FxCopAnalyzers": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
