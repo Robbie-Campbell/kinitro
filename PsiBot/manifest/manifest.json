@@ -1,0 +1,43 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.5/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.5",
+  "version": "1.0.0",
+  "id": "6a3e328a-bd79-44d5-ac94-d3abdf51e3c0",
+  "packageName": "PsiBot",
+  "developer": {
+    "name": "Kinitro",
+    "websiteUrl": "https://www.microsoft.com",
+    "privacyUrl": "https://www.teams.com/privacy",
+    "termsOfUseUrl": "https://www.teams.com/termsofuser"
+  },
+  "icons": {
+    "outline": "icon-outline.png",
+    "color": "Kinitro.PNG"
+  },
+  "name": {
+    "short": "Kinitro",
+    "full": "Kinitro"
+  },
+  "description": {
+    "short": "Measuring your participation!",
+    "full": "Measuring your participation!"
+  },
+  "accentColor": "#FFFFFF",
+  "bots": [
+    {
+      "botId": "6a3e328a-bd79-44d5-ac94-d3abdf51e3c0",
+      "scopes": [
+        "personal",
+        "groupchat",
+        "team"
+      ],
+      "supportsFiles": false,
+      "isNotificationOnly": false
+    }
+  ],
+  "permissions": [
+    "identity",
+    "messageTeamMembers"
+  ],
+  "validDomains": []
+}

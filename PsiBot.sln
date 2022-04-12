@@ -26,6 +26,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendMessageToUsers", "SendMessageToUsers\SendMessageToUsers.csproj", "{C1F6453D-9ADF-4B8D-A322-06E249576F1E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -74,6 +76,14 @@ Global
 		{9B8E205A-0CCB-4B3C-AED5-B5AEFCF1FBC7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9B8E205A-0CCB-4B3C-AED5-B5AEFCF1FBC7}.Release|x64.ActiveCfg = Release|Any CPU
 		{9B8E205A-0CCB-4B3C-AED5-B5AEFCF1FBC7}.Release|x64.Build.0 = Release|Any CPU
+		{C1F6453D-9ADF-4B8D-A322-06E249576F1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1F6453D-9ADF-4B8D-A322-06E249576F1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1F6453D-9ADF-4B8D-A322-06E249576F1E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C1F6453D-9ADF-4B8D-A322-06E249576F1E}.Debug|x64.Build.0 = Debug|Any CPU
+		{C1F6453D-9ADF-4B8D-A322-06E249576F1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1F6453D-9ADF-4B8D-A322-06E249576F1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1F6453D-9ADF-4B8D-A322-06E249576F1E}.Release|x64.ActiveCfg = Release|Any CPU
+		{C1F6453D-9ADF-4B8D-A322-06E249576F1E}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

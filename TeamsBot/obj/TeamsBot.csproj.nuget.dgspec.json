@@ -1,23 +1,22 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\robbi\\microsoft-graph-comms-samples\\Samples\\PublicSamples\\PsiBot\\TeamsBot\\TeamsBot.csproj": {}
+    "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBot\\TeamsBot.csproj": {}
   },
   "projects": {
-    "C:\\Users\\robbi\\microsoft-graph-comms-samples\\Samples\\PublicSamples\\PsiBot\\TeamsBot\\TeamsBot.csproj": {
+    "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBot\\TeamsBot.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\robbi\\microsoft-graph-comms-samples\\Samples\\PublicSamples\\PsiBot\\TeamsBot\\TeamsBot.csproj",
+        "projectUniqueName": "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBot\\TeamsBot.csproj",
         "projectName": "Microsoft.Psi.TeamsBot",
-        "projectPath": "C:\\Users\\robbi\\microsoft-graph-comms-samples\\Samples\\PublicSamples\\PsiBot\\TeamsBot\\TeamsBot.csproj",
-        "packagesPath": "C:\\Users\\robbi\\microsoft-graph-comms-samples\\Samples\\packages",
-        "outputPath": "C:\\Users\\robbi\\microsoft-graph-comms-samples\\Samples\\PublicSamples\\PsiBot\\TeamsBot\\obj\\",
+        "projectPath": "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBot\\TeamsBot.csproj",
+        "packagesPath": "C:\\Users\\robbi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBot\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\robbi\\microsoft-graph-comms-samples\\Samples\\NuGet.Config",
           "C:\\Users\\robbi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -26,6 +25,7 @@
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

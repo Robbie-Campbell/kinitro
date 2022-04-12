@@ -8,6 +8,8 @@ namespace Microsoft.Psi.TeamsBot
     using System.Collections.Generic;
     using System.Drawing;
     using System.Linq;
+
+    // using SendMessageToUsers;
     using PsiImage = Microsoft.Psi.Imaging.Image;
 
     /// <summary>
@@ -105,6 +107,8 @@ namespace Microsoft.Psi.TeamsBot
                         if (isSpeaking && !StaticParticipants[s.Key].TimeSpoken.IsRunning)
                         {
                             StaticParticipants[s.Key].TimeSpoken.Start();
+                            StaticParticipants[s.Key].NumberOfTimesSpoken += 1;
+                            StaticParticipants[s.Key].SetMeetingAverageForTimeSpeaking(StaticParticipants);
                         }
                         else
                         {

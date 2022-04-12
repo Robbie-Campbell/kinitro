@@ -8646,23 +8646,22 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\robbi\\microsoft-graph-comms-samples\\Samples\\packages": {},
+    "C:\\Users\\robbi\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\robbi\\microsoft-graph-comms-samples\\Samples\\PublicSamples\\PsiBot\\TeamsBotTester\\TeamsBotTester.csproj",
+      "projectUniqueName": "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBotTester\\TeamsBotTester.csproj",
       "projectName": "TeamsBotTester",
-      "projectPath": "C:\\Users\\robbi\\microsoft-graph-comms-samples\\Samples\\PublicSamples\\PsiBot\\TeamsBotTester\\TeamsBotTester.csproj",
-      "packagesPath": "C:\\Users\\robbi\\microsoft-graph-comms-samples\\Samples\\packages",
-      "outputPath": "C:\\Users\\robbi\\microsoft-graph-comms-samples\\Samples\\PublicSamples\\PsiBot\\TeamsBotTester\\obj\\",
+      "projectPath": "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBotTester\\TeamsBotTester.csproj",
+      "packagesPath": "C:\\Users\\robbi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBotTester\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\robbi\\microsoft-graph-comms-samples\\Samples\\NuGet.Config",
         "C:\\Users\\robbi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -8671,17 +8670,18 @@
         "net472"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net472": {
           "targetAlias": "net472",
           "projectReferences": {
-            "C:\\Users\\robbi\\microsoft-graph-comms-samples\\Samples\\PublicSamples\\PsiBot\\TeamsBotSample\\TeamsBotSample.csproj": {
-              "projectPath": "C:\\Users\\robbi\\microsoft-graph-comms-samples\\Samples\\PublicSamples\\PsiBot\\TeamsBotSample\\TeamsBotSample.csproj"
+            "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBotSample\\TeamsBotSample.csproj": {
+              "projectPath": "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBotSample\\TeamsBotSample.csproj"
             },
-            "C:\\Users\\robbi\\microsoft-graph-comms-samples\\Samples\\PublicSamples\\PsiBot\\TeamsBot\\TeamsBot.csproj": {
-              "projectPath": "C:\\Users\\robbi\\microsoft-graph-comms-samples\\Samples\\PublicSamples\\PsiBot\\TeamsBot\\TeamsBot.csproj"
+            "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBot\\TeamsBot.csproj": {
+              "projectPath": "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBot\\TeamsBot.csproj"
             }
           }
         }

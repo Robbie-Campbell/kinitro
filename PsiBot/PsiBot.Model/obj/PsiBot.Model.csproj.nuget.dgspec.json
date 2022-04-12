@@ -1,23 +1,22 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\robbi\\microsoft-graph-comms-samples\\Samples\\PublicSamples\\PsiBot\\PsiBot\\PsiBot.Model\\PsiBot.Model.csproj": {}
+    "C:\\Users\\robbi\\hopefully-temp\\kinitro\\PsiBot\\PsiBot.Model\\PsiBot.Model.csproj": {}
   },
   "projects": {
-    "C:\\Users\\robbi\\microsoft-graph-comms-samples\\Samples\\PublicSamples\\PsiBot\\PsiBot\\PsiBot.Model\\PsiBot.Model.csproj": {
+    "C:\\Users\\robbi\\hopefully-temp\\kinitro\\PsiBot\\PsiBot.Model\\PsiBot.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\robbi\\microsoft-graph-comms-samples\\Samples\\PublicSamples\\PsiBot\\PsiBot\\PsiBot.Model\\PsiBot.Model.csproj",
+        "projectUniqueName": "C:\\Users\\robbi\\hopefully-temp\\kinitro\\PsiBot\\PsiBot.Model\\PsiBot.Model.csproj",
         "projectName": "PsiBot.Model",
-        "projectPath": "C:\\Users\\robbi\\microsoft-graph-comms-samples\\Samples\\PublicSamples\\PsiBot\\PsiBot\\PsiBot.Model\\PsiBot.Model.csproj",
-        "packagesPath": "C:\\Users\\robbi\\microsoft-graph-comms-samples\\Samples\\packages",
-        "outputPath": "C:\\Users\\robbi\\microsoft-graph-comms-samples\\Samples\\PublicSamples\\PsiBot\\PsiBot\\PsiBot.Model\\obj\\",
+        "projectPath": "C:\\Users\\robbi\\hopefully-temp\\kinitro\\PsiBot\\PsiBot.Model\\PsiBot.Model.csproj",
+        "packagesPath": "C:\\Users\\robbi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\robbi\\hopefully-temp\\kinitro\\PsiBot\\PsiBot.Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\robbi\\microsoft-graph-comms-samples\\Samples\\NuGet.Config",
           "C:\\Users\\robbi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
@@ -26,6 +25,7 @@
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

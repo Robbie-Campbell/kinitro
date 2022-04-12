@@ -9,3 +9,15 @@ C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\TeamsB
 C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\TeamsBot\obj\Debug\netstandard2.0\Microsoft.Psi.TeamsBot.dll
 C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\TeamsBot\obj\Debug\netstandard2.0\Microsoft.Psi.TeamsBot.xml
 C:\Users\robbi\microsoft-graph-comms-samples\Samples\PublicSamples\PsiBot\TeamsBot\obj\Debug\netstandard2.0\Microsoft.Psi.TeamsBot.pdb
+C:\Users\robbi\hopefully-temp\kinitro\TeamsBot\bin\Debug\netstandard2.0\Microsoft.Psi.TeamsBot.deps.json
+C:\Users\robbi\hopefully-temp\kinitro\TeamsBot\bin\Debug\netstandard2.0\Microsoft.Psi.TeamsBot.dll
+C:\Users\robbi\hopefully-temp\kinitro\TeamsBot\bin\Debug\netstandard2.0\Microsoft.Psi.TeamsBot.pdb
+C:\Users\robbi\hopefully-temp\kinitro\TeamsBot\bin\Debug\netstandard2.0\Microsoft.Psi.TeamsBot.xml
+C:\Users\robbi\hopefully-temp\kinitro\TeamsBot\obj\Debug\netstandard2.0\TeamsBot.csproj.AssemblyReference.cache
+C:\Users\robbi\hopefully-temp\kinitro\TeamsBot\obj\Debug\netstandard2.0\TeamsBot.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\robbi\hopefully-temp\kinitro\TeamsBot\obj\Debug\netstandard2.0\TeamsBot.AssemblyInfoInputs.cache
+C:\Users\robbi\hopefully-temp\kinitro\TeamsBot\obj\Debug\netstandard2.0\TeamsBot.AssemblyInfo.cs
+C:\Users\robbi\hopefully-temp\kinitro\TeamsBot\obj\Debug\netstandard2.0\TeamsBot.csproj.CoreCompileInputs.cache
+C:\Users\robbi\hopefully-temp\kinitro\TeamsBot\obj\Debug\netstandard2.0\Microsoft.Psi.TeamsBot.dll
+C:\Users\robbi\hopefully-temp\kinitro\TeamsBot\obj\Debug\netstandard2.0\Microsoft.Psi.TeamsBot.xml
+C:\Users\robbi\hopefully-temp\kinitro\TeamsBot\obj\Debug\netstandard2.0\Microsoft.Psi.TeamsBot.pdb

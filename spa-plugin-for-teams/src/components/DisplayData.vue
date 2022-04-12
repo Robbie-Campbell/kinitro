@@ -1,26 +1,30 @@
 <template>
-  <div class="hello">
-    <canvas id="dataDisplay">
-    </canvas>
+  <div class="information">
+    <h1>{{this.numberTimesSpoken}}</h1>
+    <IndividualPie :participant='this.participant' />
     <PulseLoader class="pulse-loader" v-if="this.loading"/>
+    <MeetingPie :participant='this.participant' />
   </div>
 </template>
 
 <script>
     import axios from 'axios'
-    import Chart from 'chart.js'
     import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
+    import IndividualPie from '@/components/IndividualPie.vue'
+    import MeetingPie from '@/components/MeetingPie.vue'
     export default {
         name: 'DisplayData',
         emits: ['nameRecieved'],
         components: {
             'PulseLoader': PulseLoader,
+            'IndividualPie': IndividualPie,
+            'MeetingPie': MeetingPie,
         },
         mounted() {
-            this.applyDataToPie();
             this.$nextTick(() => {
                     window.setInterval(() => {
-                    this.updateChartValues()
+                    console.log(this.participant);
+                    this.updateAllData()
                 }, 5000)
             });
         },
@@ -28,47 +32,32 @@
             return {
                 participant: null,
                 loading: true,
-                data: [],
-                pie: null
+                data: {},
+                numberTimesSpoken: 0
             }
         },
         methods: {
             updateData() {
                 const id = this.$route.params.slug;
                 return axios
-                .get(`https://bb31-82-24-11-13.ngrok.io/api/displaydata/${id}`)
+                .get(`https://e33e-194-80-64-241.ngrok.io/api/displaydata/${id}`)
                     .then((response) => {
                         this.participant = response.data;
                     }).finally(() => (this.loading = false))
             },
-            applyDataToPie() {
-                const ctx = document.getElementById('dataDisplay');
-                this.pie = new Chart(ctx, {
-                    type: 'doughnut',
-                    data: {
-                        labels: ["Time Spent Speaking", "Time in Meeting Total"],
-                        datasets: [{
-                            label: "Time in meeting speaking breakdown",
-                            backgroundColor: ["#3e95cd", "#8e5ea2"],
-                            data: [1, 1]
-                        }]
-                    },
-                    options: {
-                        title: {
-                            display: false,
-                            text: 'Breakdown of talking time'
-                        },
-                    }
-                })
+            updateNumberTimesSpoken() {
+                this.numberTimesSpoken = Math.round(parseInt(this.participant['numberOfTimesSpoken']) / 30);
             },
-            updateChartValues() {
+            updatePropInParent() {
+                this.loading = false;
+                this.$emit("nameRecieved", this.participant['participantName']);
+            },
+            updateAllData() {
                 this.updateData();
                 if (this.participant['timeSpoken']) {
-                    this.loading = false;
-                    this.$emit("nameRecieved", this.participant['participantName']);
-                    this.pie.data.datasets[0].data = [this.participant['timeSpoken']['elapsedMilliseconds'], this.participant['timeInMeeting']['elapsedMilliseconds']];
+                    this.updatePropInParent()
+                    this.updateNumberTimesSpoken();
                 }
-                this.pie.update();
             }
         }
     }

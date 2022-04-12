@@ -179,7 +179,7 @@ namespace Microsoft.Psi.TeamsBot
         public Receiver<Dictionary<string, (AudioBuffer, DateTime)>> AudioIn => this.audioInConnector.In;
 
         /// <inheritdoc />
-        public bool EnableScreenSharing => true;
+        public bool EnableScreenSharing => false;
 
         /// <inheritdoc />
         public (int Width, int Height) ScreenShareSize => (this.ScreenWidth, this.ScreenHeight);
