@@ -30,9 +30,10 @@
             updateData() {
                 var percentageTimeSpeaking = this.participant['timeSpoken']['elapsedMilliseconds'] / this.participant['timeInMeeting']['elapsedMilliseconds'] * 100;
                 this.data = {
-                    'values': [percentageTimeSpeaking, 100 - percentageTimeSpeaking]
+                    'values': [Math.round(percentageTimeSpeaking), 100 - Math.round(percentageTimeSpeaking)],
+                    'timeValues': [this.participant['timeSpoken']['elapsedMilliseconds'], this.participant['timeInMeeting']['elapsedMilliseconds']]
                 }
-            }
+            },
         }
     }
 </script>

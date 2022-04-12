@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home container p-5 bg-dark">
     <Base />
   </div>
 </template>
@@ -9,7 +9,7 @@
 import Base from '@/components/Base.vue'
 
 export default {
-  name: 'Home',
+  name: 'Main',
   components: {
     Base
   }

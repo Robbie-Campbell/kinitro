@@ -1,7 +1,6 @@
 <template>
-  <div class="main">
-    <h1>Hello{{this.name}}</h1>
-    <DisplayData v-on:nameRecieved="updateName"/>
+  <div class="main align-items-center">
+    <DisplayData :name="this.name" v-on:nameRecieved="updateName"/>
   </div>
 </template>
 
@@ -31,7 +30,7 @@
         methods: {
           updateName(name) {
             this.nameUpdated = true;
-            this.name = " " + name.split(" ")[0] + "!";
+            this.name = name.split(" ")[0];
           },
           nameDisplayGraphic() {
             this.name.length == 3 ? this.name = "." : this.name += ".";

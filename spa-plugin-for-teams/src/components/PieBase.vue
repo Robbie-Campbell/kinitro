@@ -1,7 +1,13 @@
 <template>
-  <div style="width:400px;height:400px">
-    <canvas :id="this.setup.id">
+  <div class="m-2 p-2 bg-light chart w-100">
+    <h5 class="border-bottom p-2">{{this.setup.title}}</h5>
+    <canvas class="drawnChart" :id="this.setup.id">
     </canvas>
+    <div v-if="this.data.timeValues">
+        <div v-for="(time, index) in this.data.timeValues" :key="time">
+            <p>{{this.setup.labels[index]}}: {{this.msToTime(time)}}</p>
+        </div>
+    </div>
   </div>
 </template>
 
@@ -22,7 +28,6 @@
             }
         },
         mounted() {
-            console.log(this.setup.id)
             this.applyDataToPie();
         },
         methods: {
@@ -35,7 +40,8 @@
                         datasets: [{
                             label: this.setup.title,
                             backgroundColor: this.setup.colors,
-                            data: [1, 1]
+                            data: [1, 1],
+                            color: ['#fff']
                         }]
                     },
                     options: {
@@ -46,18 +52,48 @@
                     }
                 })
             },
-            genRandomId() {
-                var S4 = () => {
-                    return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
-                };
-                return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
-            },
             updatePieData() {
                 if (this.data.values) {
                     this.pie.data.datasets[0].data = this.data.values;
                 }
                 this.pie.update();
             },
+            msToTime(s) {
+
+                // Pad to 2 or 3 digits, default is 2
+                function pad(n, z) {
+                    z = z || 2;
+                    return ('00' + n).slice(-z);
+                }
+
+                var ms = s % 1000;
+                s = (s - ms) / 1000;
+                var secs = s % 60;
+                s = (s - secs) / 60;
+                var mins = s % 60;
+                var hrs = (s - mins) / 60;
+
+                return pad(hrs) + ':' + pad(mins) + ':' + pad(secs) + '.' + pad(ms, 3);
+            }
         },
     }
 </script>
+
+<style scoped>
+    .chart{
+        width:450px;
+        height:380px;
+    }
+    @media screen and (max-width: 992px) {
+        .chart{
+            width: 300px;
+            height:50vh;
+            width:100%;
+        }
+    }
+    @media screen and (max-width: 780px) {
+        .chart{
+            height:40vh;
+        }
+    }
+</style>
