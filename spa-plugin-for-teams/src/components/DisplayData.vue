@@ -1,6 +1,6 @@
 <template>
-  <div class="information align-items-center">
-    <div>
+  <div class="information">
+    <div class="align-items-center p-5 bg-dark">
         <div class=" justify-content-center p-2 m-2 bg-light w-100">
             <h3 class="border-bottom p-2">Measure your participation!</h3>
             <p>Participant Name: {{this.user}}</p>
@@ -87,7 +87,6 @@
     @media screen and (max-width: 992px) {
         .charts{
             flex-direction: column;
-            margin:auto;
         }
     }
 </style>

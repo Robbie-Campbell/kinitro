@@ -1,5 +1,5 @@
 <template>
-  <div class="home container p-5 bg-dark">
+  <div class="home container">
     <Base />
   </div>
 </template>

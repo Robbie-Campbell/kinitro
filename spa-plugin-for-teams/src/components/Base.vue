@@ -1,5 +1,5 @@
 <template>
-  <div class="main align-items-center">
+  <div class="main">
     <DisplayData :name="this.name" v-on:nameRecieved="updateName"/>
   </div>
 </template>
