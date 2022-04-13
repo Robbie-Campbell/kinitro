@@ -1,5 +1,5 @@
 <template>
-  <div class="links container">
+  <div class="links mt-5">
     <Base />
   </div>
 </template>

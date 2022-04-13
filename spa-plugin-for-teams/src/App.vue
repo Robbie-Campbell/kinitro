@@ -1,4 +1,8 @@
 <template>
+    <nav class="d-flex bg-light p-4 justify-content-around">
+        <router-link to="/">Home</router-link>
+        <router-link to="/about">About</router-link>
+    </nav>
   <router-view/>
 </template>
 

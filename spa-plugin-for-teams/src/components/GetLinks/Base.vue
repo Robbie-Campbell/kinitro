@@ -1,6 +1,9 @@
 <template>
-  <div class="main">
-      <p>{{this.hello}}</p>
+  <div class="main container">
+      <div class="bg-light p-3 mb-3">
+          <h3>Find your link</h3>
+          <p>You should be able to find your link below, if not please press the refresh button.</p>
+      </div>
       <LinkList />
   </div>
 </template>
@@ -12,16 +15,5 @@
         components: {
             LinkList,
         },
-        data() {
-            return {
-                hello: 'testing...'
-            }
-        }
     }
 </script>
-
-<style>
-    main{
-        color:white;
-    }
-</style>
