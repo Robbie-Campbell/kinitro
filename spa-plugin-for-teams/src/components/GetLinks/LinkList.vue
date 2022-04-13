@@ -9,7 +9,7 @@
         <div v-else class="p-2 bg-light">
             <h1>Could not find any active links...</h1>
         </div>
-        <button v-on:click="this.getCurrentLinks" class="btn btn-secondary">Refresh List</button>
+        <button v-on:click="this.getCurrentLinks()" class="btn btn-secondary">Refresh List</button>
     </div>
 </template>
 
@@ -36,7 +36,7 @@ export default {
         getCurrentLinks() {
             this.searching = true;
             return axios
-            .get(`https://ed53-194-80-64-241.ngrok.io/api/getLinks`)
+            .get(`https://cf8f-194-80-64-241.ngrok.io/api/links/getlinks`)
                 .then((response) => {
                     this.links = response.data;
             }).catch((e) => {

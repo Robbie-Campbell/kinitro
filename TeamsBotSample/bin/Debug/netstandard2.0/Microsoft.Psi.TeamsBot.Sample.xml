@@ -16,6 +16,17 @@
             <param name="id">The id of the participant.</param>
             <returns>The Participants Data.</returns>
         </member>
+        <member name="T:Microsoft.Psi.TeamsBot.LinksController">
+            <summary>
+            Generates a URL for the display of user participation data.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Psi.TeamsBot.LinksController.GetAllLinkData">
+            <summary>
+            Gets the data by request of a given participant.
+            </summary>
+            <returns>The Participants Data.</returns>
+        </member>
         <member name="T:Microsoft.Psi.TeamsBot.Measurer">
             <summary>
             Represents a participant engagement component base class.
@@ -44,11 +55,37 @@
             <param name="id">The id of the participant.</param>
             <returns>The participant and their data.</returns>
         </member>
+        <member name="M:Microsoft.Psi.TeamsBot.Measurer.GetAllLinkData">
+            <summary>
+            Gets all link data for api or null value.
+            </summary>
+            <returns>Link data or null.</returns>
+        </member>
         <member name="M:Microsoft.Psi.TeamsBot.Measurer.UpdateModel(System.Collections.Generic.Dictionary{System.String,Microsoft.Psi.Shared{Microsoft.Psi.Imaging.Image}},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.DateTime}},System.DateTime)">
             <inheritdoc />
         </member>
         <member name="M:Microsoft.Psi.TeamsBot.Measurer.UpdateVisual(System.Collections.Generic.IEnumerable{Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.Participant},System.Drawing.Graphics)">
             <inheritdoc />
+        </member>
+        <member name="T:Microsoft.Psi.TeamsBot.LinkData">
+            <summary>
+            Stores the data neccessary for users to look at their participation data.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Psi.TeamsBot.LinkData.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Psi.TeamsBot.LinkData"/> class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.LinkData.Name">
+            <summary>
+            Gets or sets the name of a participant.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.LinkData.Link">
+            <summary>
+            Gets or sets the link for  participant to view.
+            </summary>
         </member>
         <member name="T:Microsoft.Psi.TeamsBot.StaticParticipant">
             <summary>

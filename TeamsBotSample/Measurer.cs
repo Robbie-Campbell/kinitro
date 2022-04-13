@@ -39,6 +39,8 @@ namespace Microsoft.Psi.TeamsBot
 
         private static Dictionary<string, StaticParticipant> StaticParticipants { get => staticParticipants; }
 
+        private static Dictionary<string, LinkData> LinkData { get => linkData; }
+
         /// <summary>
         /// Updates the name of a participant.
         /// </summary>
@@ -69,10 +71,11 @@ namespace Microsoft.Psi.TeamsBot
         /// Gets all link data for api or null value.
         /// </summary>
         /// <returns>Link data or null.</returns>
-        public static Dictionary<string, LinkData> GetAllLinkData() {
+        public static Dictionary<string, LinkData> GetAllLinkData()
+        {
             if (linkData.Count > 0)
             {
-                return linkData;
+                return LinkData;
             }
 
             return null;
@@ -126,6 +129,7 @@ namespace Microsoft.Psi.TeamsBot
                             StaticParticipants[s.Key].TimeSpoken.Start();
                             StaticParticipants[s.Key].NumberOfTimesSpoken += 1;
                             StaticParticipants[s.Key].SetMeetingAverageForTimeSpeaking(StaticParticipants);
+                            linkData[s.Key].Link = linkData[s.Key].Link;
                         }
                         else
                         {

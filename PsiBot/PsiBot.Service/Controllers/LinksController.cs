@@ -1,17 +1,18 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT license.
 
-namespace Microsoft.Psi.TeamsBot
+namespace PsiBot.Services.Controllers
 {
     using System.Collections.Generic;
     using System.Net.Http;
     using System.Text;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Psi.TeamsBot;
 
     /// <summary>
     /// Generates a URL for the display of user participation data.
     /// </summary>
-    [Route("api/")]
+    [Route("api/[controller]")]
     [ApiController]
     public class LinksController : ControllerBase
     {
@@ -20,8 +21,8 @@ namespace Microsoft.Psi.TeamsBot
         /// </summary>
         /// <returns>The Participants Data.</returns>
         [HttpGet("getlinks")]
-        public static Dictionary<string, LinkData> GetAllLinkData()
-        {
+        public Dictionary<string, LinkData> GetAllLinkData() {
+
             return Measurer.GetAllLinkData();
         }
     }

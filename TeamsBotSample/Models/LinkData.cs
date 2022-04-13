@@ -11,7 +11,6 @@ namespace Microsoft.Psi.TeamsBot
     /// </summary>
     public class LinkData
     {
-
         /// <summary>
         /// Initializes a new instance of the <see cref="LinkData"/> class.
         /// </summary>
