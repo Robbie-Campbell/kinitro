@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import DisplayData from '@/components/DisplayData.vue'
+  import DisplayData from '@/components/DataDisplay/DisplayData.vue'
       export default {
         name: 'Base',
         components: {

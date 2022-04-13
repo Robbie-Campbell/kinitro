@@ -87,6 +87,7 @@
     @media screen and (max-width: 992px) {
         .chart{
             min-width: 300px;
+            max-width:300px;
             height:50vh;
             width:100%;
         }

@@ -18,8 +18,8 @@
 <script>
     import axios from 'axios'
     import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
-    import IndividualPie from '@/components/IndividualPie.vue'
-    import MeetingPie from '@/components/MeetingPie.vue'
+    import IndividualPie from '@/components/DataDisplay/IndividualPie.vue'
+    import MeetingPie from '@/components/DataDisplay/MeetingPie.vue'
     export default {
         name: 'DisplayData',
         emits: ['nameRecieved'],

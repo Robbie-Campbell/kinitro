@@ -1,15 +1,14 @@
 <template>
-  <div class="home container">
+  <div class="links container">
     <Base />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Base from '@/components/DataDisplay/Base.vue'
-
+import Base from '@/components/GetLinks/Base.vue'
 export default {
-  name: 'Main',
+  name: 'Link',
   components: {
     Base
   }

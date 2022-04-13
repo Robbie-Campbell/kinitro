@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Main from '../views/Main.vue'
+import Link from '../views/Link.vue'
 
 const routes = [
   {
@@ -14,6 +15,11 @@ const routes = [
     path: '/data/:slug',
     component: Main,
     name: 'Display'
+  },
+  {
+    path: '/',
+    component: Link,
+    name: 'Link'
   }
 ]
 

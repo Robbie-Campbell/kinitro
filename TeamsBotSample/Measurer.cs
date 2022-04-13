@@ -19,6 +19,7 @@ namespace Microsoft.Psi.TeamsBot
     {
         private const double BallWindowScale = 0.1;
         private static Dictionary<string, StaticParticipant> staticParticipants = new Dictionary<string, StaticParticipant>();
+        private static Dictionary<string, LinkData> linkData = new Dictionary<string, LinkData>();
         private string webURL = "https://localhost:8080/data/";
 
         private double ballX = 0.0;
@@ -46,6 +47,7 @@ namespace Microsoft.Psi.TeamsBot
         public static void UpdateParticipantName(string id, string name)
         {
             staticParticipants[id].ParticipantName = name;
+            linkData[id].Name = name;
         }
 
         /// <summary>
@@ -58,6 +60,19 @@ namespace Microsoft.Psi.TeamsBot
             if (StaticParticipants.ContainsKey(id))
             {
                 return StaticParticipants[id];
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Gets all link data for api or null value.
+        /// </summary>
+        /// <returns>Link data or null.</returns>
+        public static Dictionary<string, LinkData> GetAllLinkData() {
+            if (linkData.Count > 0)
+            {
+                return linkData;
             }
 
             return null;
@@ -89,6 +104,8 @@ namespace Microsoft.Psi.TeamsBot
                     StaticParticipants.Add(frame.Key, new StaticParticipant());
                     StaticParticipants[frame.Key].TimeInMeeting.Start();
                     string webLink = this.webURL + frame.Key;
+                    linkData.Add(frame.Key, new LinkData());
+                    linkData[frame.Key].Link = webLink;
                 }
 
                 theta += inc;

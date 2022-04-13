@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    import PieBase from '@/components/PieBase.vue'
+    import PieBase from '@/components/DataDisplay/PieBase.vue'
     export default {
         name: 'IndividualPie',
         components: {
@@ -23,7 +23,6 @@
         watch: {
             participant: function() {
                 this.updateData();
-                console.log(this.participant);
             }
         },
         methods: {
