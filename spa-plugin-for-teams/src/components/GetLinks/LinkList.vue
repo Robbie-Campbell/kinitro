@@ -6,8 +6,8 @@
             </div>
         </div>
         <PulseLoader v-if="this.searching" />
-        <div v-else class="p-2 bg-light">
-            <h1>Could not find any active links...</h1>
+        <div class="p-2 bg-light" v-if="!this.LinkList">
+            <p>Could not find any active links...</p>
         </div>
         <button v-on:click="this.getCurrentLinks()" class="btn btn-secondary">Refresh List</button>
     </div>

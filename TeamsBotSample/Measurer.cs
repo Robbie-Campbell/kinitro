@@ -20,7 +20,7 @@ namespace Microsoft.Psi.TeamsBot
         private const double BallWindowScale = 0.1;
         private static Dictionary<string, StaticParticipant> staticParticipants = new Dictionary<string, StaticParticipant>();
         private static Dictionary<string, LinkData> linkData = new Dictionary<string, LinkData>();
-        private string webURL = "https://localhost:8080/data/";
+        private string webURL = "http://localhost:8080/data/";
 
         private double ballX = 0.0;
         private double ballY = 0.0;
@@ -122,18 +122,26 @@ namespace Microsoft.Psi.TeamsBot
                 {
                     if (participants.TryGetValue(s.Key, out Participant p))
                     {
+                        StaticParticipant currentParticipant = StaticParticipants[s.Key];
+
                         // Gets whether the participant is speaking
                         bool isSpeaking = s.Value.Select(x => s.Key).Any();
-                        if (isSpeaking && !StaticParticipants[s.Key].TimeSpoken.IsRunning)
+                        if (isSpeaking && !currentParticipant.TimeSpoken.IsRunning)
                         {
-                            StaticParticipants[s.Key].TimeSpoken.Start();
-                            StaticParticipants[s.Key].NumberOfTimesSpoken += 1;
-                            StaticParticipants[s.Key].SetMeetingAverageForTimeSpeaking(StaticParticipants);
+                            if (!currentParticipant.IsSpeaking && currentParticipant.TimeSpoken.ElapsedMilliseconds % 1000 == 0)
+                            {
+                                currentParticipant.NumberOfTimesSpoken += 1;
+                            }
+
+                            currentParticipant.IsSpeaking = true;
+                            currentParticipant.TimeSpoken.Start();
+                            currentParticipant.SetMeetingAverageForTimeSpeaking(StaticParticipants);
                             linkData[s.Key].Link = linkData[s.Key].Link;
                         }
                         else
                         {
-                            StaticParticipants[s.Key].TimeSpoken.Stop();
+                            currentParticipant.TimeSpoken.Stop();
+                            currentParticipant.IsSpeaking = false;
                         }
                     }
                 }

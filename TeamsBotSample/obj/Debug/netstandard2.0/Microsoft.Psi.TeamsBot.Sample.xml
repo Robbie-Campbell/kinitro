@@ -127,6 +127,11 @@
             Gets or sets the number of times spoken in the meeting.
             </summary>
         </member>
+        <member name="P:Microsoft.Psi.TeamsBot.StaticParticipant.IsSpeaking">
+            <summary>
+            Gets or sets a value indicating whether the participant is currently speaking.
+            </summary>
+        </member>
         <member name="M:Microsoft.Psi.TeamsBot.StaticParticipant.SetMeetingAverageForTimeSpeaking(System.Collections.Generic.Dictionary{System.String,Microsoft.Psi.TeamsBot.StaticParticipant})">
             <summary>
             Establshes the average amount of time spoken for the meeting.

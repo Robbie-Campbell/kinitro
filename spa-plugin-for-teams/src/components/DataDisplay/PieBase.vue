@@ -86,15 +86,15 @@
     }
     @media screen and (max-width: 992px) {
         .chart{
-            min-width: 300px;
-            max-width:300px;
             height:50vh;
             width:100%;
+            max-width:600px;
         }
     }
     @media screen and (max-width: 780px) {
         .chart{
             height:40vh;
+            max-width:500px;
         }
     }
 </style>

@@ -23,6 +23,7 @@ namespace Microsoft.Psi.TeamsBot
             this.NumberOfTimesSpoken = 0;
             this.MeetingTotalTimeSpoken = 0;
             this.MeetingTotalTimeInMeeting = 0;
+            this.IsSpeaking = false;
         }
 
         /// <summary>
@@ -54,6 +55,11 @@ namespace Microsoft.Psi.TeamsBot
         /// Gets or sets the number of times spoken in the meeting.
         /// </summary>
         public int NumberOfTimesSpoken { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the participant is currently speaking.
+        /// </summary>
+        public bool IsSpeaking { get; set; }
 
         /// <summary>
         /// Establshes the average amount of time spoken for the meeting.

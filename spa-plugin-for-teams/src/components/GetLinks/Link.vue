@@ -1,6 +1,6 @@
 <template>
     <div class="singleLink p-2 bg-light">
-        <h1>{{this.link.name}}: {{this.link.link}}</h1>
+        <p>{{this.link.name}}: <a :href="this.link.link">Click here!</a></p>
     </div>
 </template>
 

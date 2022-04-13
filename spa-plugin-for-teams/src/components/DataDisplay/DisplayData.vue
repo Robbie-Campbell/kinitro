@@ -76,7 +76,7 @@
                 return this.attempts < 2 || this.participant;
             },
             updateNumberTimesSpoken() {
-                this.numberTimesSpoken = Math.round(parseInt(this.participant['numberOfTimesSpoken']) / 30);
+                this.numberTimesSpoken = Math.round(parseInt(this.participant['numberOfTimesSpoken']));
             },
             updatePropInParent() {
                 this.loading = false;
