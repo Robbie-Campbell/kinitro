@@ -1,14 +1,14 @@
 <template>
-  <div class="m-2 p-2 bg-light chart w-100">
-    <h5 class="border-bottom p-2">{{this.setup.title}}</h5>
-    <canvas class="drawnChart" :id="this.setup.id">
-    </canvas>
-    <div v-if="this.data.timeValues">
-        <div v-for="(time, index) in this.data.timeValues" :key="time" v-bind:time="this.data.timeValues[index]">
-            <p>{{this.setup.labels[index]}}: {{this.msToTime(time)}}</p>
+    <div class="m-2 p-2 bg-light chart w-100">
+        <h5 class="border-bottom p-2">{{this.setup.title}}</h5>
+        <canvas class="drawnChart" :id="this.setup.id">
+        </canvas>
+        <div v-if="this.data.timeValues">
+            <div v-for="(time, index) in this.data.timeValues" :key="time" v-bind:time="this.data.timeValues[index]">
+                <p>{{this.setup.labels[index]}}: {{this.msToTime(time)}}</p>
+            </div>
         </div>
     </div>
-  </div>
 </template>
 
 <script>

@@ -1,23 +1,23 @@
 <template>
-  <div class="information">
-    <div class="align-items-center p-5 bg-dark">
-        <div class="justify-content-center p-2 m-2 bg-light w-100">
-            <h3 class="border-bottom p-2">Measure your participation!</h3>
-            <p>Participant Name: {{this.user}}</p>
-            <p>Number of times spoken: {{this.numberTimesSpoken}}</p>
-        </div>
-        <div v-if="this.searchingForUserOrUserHasBeenFound()">
-            <PulseLoader class="pulse-loader" v-if="this.loading"/>
-            <div class="charts w-100 justify-content-between">
-                <IndividualPie :participant='this.participant' />
-                <MeetingPie :participant='this.participant' />
+    <div class="information">
+        <div class="align-items-center p-5 bg-dark">
+            <div class="justify-content-center p-2 m-2 bg-light w-100">
+                <h3 class="border-bottom p-2">Measure your participation!</h3>
+                <p>Participant Name: {{this.user}}</p>
+                <p>Number of times spoken: {{this.numberTimesSpoken}}</p>
+            </div>
+            <div v-if="this.searchingForUserOrUserHasBeenFound()">
+                <PulseLoader class="pulse-loader" v-if="this.loading"/>
+                <div class="charts w-100 justify-content-between">
+                    <IndividualPie :participant='this.participant' />
+                    <MeetingPie :participant='this.participant' />
+                </div>
+            </div>
+            <div class="justify-content-center p-2 m-2 mt-5 bg-light w-100" v-else>
+                <h1>Sorry, we couldn't find any data for this user try refreshing the page or get a new link!</h1>
             </div>
         </div>
-        <div class="justify-content-center p-2 m-2 mt-5 bg-light w-100" v-else>
-            <h1>Sorry, we couldn't find any data for this user try refreshing the page or get a new link!</h1>
-        </div>
     </div>
-  </div>
 </template>
 
 <script>

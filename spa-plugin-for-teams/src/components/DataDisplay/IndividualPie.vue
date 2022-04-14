@@ -14,7 +14,7 @@
         data() {
             return {
                 data: {},
-                setup: {'labels': ["Time Spent Speaking", "Time Not Speaking"],
+                setup: {'labels': ["Time Spent Speaking", "Time in Meeting"],
                     'title': 'Total Time Speaking Breakdown',
                     'colors': ['#ab500f', '#6e4115'], 'id': "individualPie"},
             }
