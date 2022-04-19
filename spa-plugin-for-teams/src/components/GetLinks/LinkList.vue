@@ -24,6 +24,7 @@ export default {
         PulseLoader
     },
     mounted() {
+        console.log(process.env.TEAMS_REFERENCE);
         this.getCurrentLinks();
     },
     data() {
@@ -36,7 +37,7 @@ export default {
         getCurrentLinks() {
             this.searching = true;
             return axios
-            .get(`https://cf8f-194-80-64-241.ngrok.io/api/links/getlinks`)
+            .get(`https://a7f2-194-80-64-241.ngrok.io/api/links/getlinks`)
                 .then((response) => {
                     this.links = response.data;
             }).catch((e) => {

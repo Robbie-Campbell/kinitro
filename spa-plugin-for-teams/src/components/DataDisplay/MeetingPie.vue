@@ -15,25 +15,34 @@
             return {
                 data: {},
                 setup: {'labels': ["Time Spent Speaking", "Time Spent In Meeting"],
-                    'title': 'Average Meeting Participant Speaking Time',
+                    'title': 'Meeting Average for Time Spent Speaking',
                     'colors': ['#00003f', '#00008b'], 'id': "meetingPie"},
             }
         },
         props: ['participant'],
         watch: {
             participant: function() {
-                this.updateData();
-                console.log(this.participant);
+                if (this.participant['timeSpoken'])
+                    this.updateData();
             }
         },
         methods: {
             updateData() {
-                var percentageTimeSpeaking = this.participant['meetingTotalTimeSpoken'] / this.participant['meetingTotalTimeInMeeting'] * 100;
-                this.data = {
-                    'values': [Math.round(percentageTimeSpeaking), 100 - Math.round(percentageTimeSpeaking)],
-                    'timeValues': [this.participant['meetingTotalTimeSpoken'], this.participant['meetingTotalTimeInMeeting']]
-
+                var percentageTimeSpeaking = this.participant['meetingTotalTimeSpoken'] - this.participant['timeSpoken']['elapsedMilliseconds'] / this.participant['meetingTotalTimeInMeeting'] - this.participant['timeInMeeting']['elapsedMilliseconds'] * 100;
+                if (this.participant['meetingTotalTimeSpoken'] - this.participant['timeSpoken']['elapsedMilliseconds'] > 1)
+                {
+                    this.data = {
+                        'values': [Math.round(percentageTimeSpeaking), 100 - Math.round(percentageTimeSpeaking)],
+                        'timeValues': [this.participant['meetingTotalTimeSpoken'] - this.participant['timeSpoken']['elapsedMilliseconds'], this.participant['meetingTotalTimeInMeeting'] - this.participant['timeInMeeting']['elapsedMilliseconds']]
+                    }
                 }
+                else {
+                    this.data = {
+                        'values': [1, 1],
+                        'timeValues': [0, 0]
+
+                    }
+                }       
             }
         }
     }

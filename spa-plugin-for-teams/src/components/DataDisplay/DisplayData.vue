@@ -42,9 +42,8 @@
         mounted() {
             this.$nextTick(() => {
                 var checkForUpdate = window.setInterval(() => {
-                    console.log(this.participant);
                     this.checkForSuccessfulConnection(checkForUpdate);
-                    this.attempts += 1
+                    this.attempts++;
                     this.updateAllData();
                 }, 5000)
             });
@@ -62,9 +61,11 @@
             updateData() {
                 const id = this.$route.params.slug;
                 return axios
-                .get(`https://cf8f-194-80-64-241.ngrok.io/api/displaydata/${id}`)
+                .get(`https://a7f2-194-80-64-241.ngrok.io/api/displaydata/${id}`)
                     .then((response) => {
                         this.participant = response.data;
+                    }).catch(() => {
+                        this.participant = null;
                     }).finally(() => (this.loading = false))
             },
             checkForSuccessfulConnection(timeOut) {
@@ -73,14 +74,15 @@
                 }
             },
             searchingForUserOrUserHasBeenFound() {
-                return this.attempts < 2 || this.participant;
+                return this.attempts < 2 || this.participant['timeSpoken'];
             },
             updateNumberTimesSpoken() {
                 this.numberTimesSpoken = Math.round(parseInt(this.participant['numberOfTimesSpoken']));
             },
             updatePropInParent() {
                 this.loading = false;
-                this.$emit("nameRecieved", this.participant['participantName']);
+                if (this.participant['timeSpoken'])
+                    this.$emit("nameRecieved", this.participant['participantName']);
             },
             updateAllData() {
                 this.updateData();

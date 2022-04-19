@@ -24,6 +24,7 @@ namespace PsiBot.Services.Controllers
         [HttpGet("{id}")]
         public StaticParticipant GetParticipantData(string id)
         {
+            Measurer.GetParticipantDataByID(id);
             return Measurer.GetParticipantDataByID(id);
         }
 

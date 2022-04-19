@@ -15,14 +15,15 @@
             return {
                 data: {},
                 setup: {'labels': ["Time Spent Speaking", "Time in Meeting"],
-                    'title': 'Total Time Speaking Breakdown',
+                    'title': 'Your Time Spent Speaking in Meeting',
                     'colors': ['#ab500f', '#6e4115'], 'id': "individualPie"},
             }
         },
         props: ['participant'],
         watch: {
             participant: function() {
-                this.updateData();
+                if (this.participant['timeSpoken'])
+                    this.updateData();
             }
         },
         methods: {

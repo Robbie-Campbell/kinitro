@@ -127,8 +127,6 @@ namespace PsiBot.Services.Bot
         /// <returns>ITeamsBot instance.</returns>
         private static ITeamsBot CreateTeamsBot(Pipeline pipeline)
         {
-            //return new ParticipantEngagementBallBot(pipeline, TimeSpan.FromSeconds(1.0 / 15.0), 1920, 1080);
-            //return new ParticipantEngagementScaleBot(pipeline, TimeSpan.FromSeconds(1.0 / 15.0), 1920, 1080, true);
             return new Measurer(pipeline, TimeSpan.FromSeconds(1.0 / 15.0), 1920, 1080);
 
         }
