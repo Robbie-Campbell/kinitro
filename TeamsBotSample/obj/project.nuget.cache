@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "a7MVOR3wXRRDXUeHYOo0LHwjvgIln0fQpP770d3g0KJ7c1/Q6pkfbKvXnp7iEXzFgtvrPCD9eiajGuaTjwnepw==",
+  "dgSpecHash": "9udtpTfC/IRoJBvad+g/woeyoq2xk4w4IpYi9Q4456OeelGBeULtZtENN2DTuYvfRIS0JZq0S9Y6BLrNY7yGWA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBotSample\\TeamsBotSample.csproj",
+  "projectFilePath": "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBotSample\\MeasurerImplementation.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\robbi\\.nuget\\packages\\adaptiveexpressions\\4.15.2\\adaptiveexpressions.4.15.2.nupkg.sha512",
     "C:\\Users\\robbi\\.nuget\\packages\\antlr4.runtime.standard\\4.8.0\\antlr4.runtime.standard.4.8.0.nupkg.sha512",

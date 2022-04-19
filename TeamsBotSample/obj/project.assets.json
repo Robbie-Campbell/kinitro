@@ -11129,9 +11129,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBotSample\\TeamsBotSample.csproj",
+      "projectUniqueName": "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBotSample\\MeasurerImplementation.csproj",
       "projectName": "Microsoft.Psi.TeamsBot.Sample",
-      "projectPath": "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBotSample\\TeamsBotSample.csproj",
+      "projectPath": "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBotSample\\MeasurerImplementation.csproj",
       "packagesPath": "C:\\Users\\robbi\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBotSample\\obj\\",
       "projectStyle": "PackageReference",

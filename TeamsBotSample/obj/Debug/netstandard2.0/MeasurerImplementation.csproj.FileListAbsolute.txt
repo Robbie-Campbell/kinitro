@@ -1,0 +1,16 @@
+C:\Users\robbi\hopefully-temp\kinitro\TeamsBotSample\obj\Debug\netstandard2.0\MeasurerImplementation.csproj.AssemblyReference.cache
+C:\Users\robbi\hopefully-temp\kinitro\TeamsBotSample\obj\Debug\netstandard2.0\MeasurerImplementation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\robbi\hopefully-temp\kinitro\TeamsBotSample\obj\Debug\netstandard2.0\MeasurerImplementation.AssemblyInfoInputs.cache
+C:\Users\robbi\hopefully-temp\kinitro\TeamsBotSample\obj\Debug\netstandard2.0\MeasurerImplementation.AssemblyInfo.cs
+C:\Users\robbi\hopefully-temp\kinitro\TeamsBotSample\obj\Debug\netstandard2.0\MeasurerImplementation.csproj.CoreCompileInputs.cache
+C:\Users\robbi\hopefully-temp\kinitro\TeamsBotSample\obj\Debug\netstandard2.0\Microsoft.Psi.TeamsBot.Sample.dll
+C:\Users\robbi\hopefully-temp\kinitro\TeamsBotSample\obj\Debug\netstandard2.0\Microsoft.Psi.TeamsBot.Sample.xml
+C:\Users\robbi\hopefully-temp\kinitro\TeamsBotSample\obj\Debug\netstandard2.0\Microsoft.Psi.TeamsBot.Sample.pdb
+C:\Users\robbi\hopefully-temp\kinitro\TeamsBotSample\bin\Debug\netstandard2.0\Microsoft.Psi.TeamsBot.Sample.deps.json
+C:\Users\robbi\hopefully-temp\kinitro\TeamsBotSample\bin\Debug\netstandard2.0\Microsoft.Psi.TeamsBot.Sample.dll
+C:\Users\robbi\hopefully-temp\kinitro\TeamsBotSample\bin\Debug\netstandard2.0\Microsoft.Psi.TeamsBot.Sample.pdb
+C:\Users\robbi\hopefully-temp\kinitro\TeamsBotSample\bin\Debug\netstandard2.0\Microsoft.Psi.TeamsBot.Sample.xml
+C:\Users\robbi\hopefully-temp\kinitro\TeamsBotSample\bin\Debug\netstandard2.0\Microsoft.Psi.TeamsBot.dll
+C:\Users\robbi\hopefully-temp\kinitro\TeamsBotSample\bin\Debug\netstandard2.0\Microsoft.Psi.TeamsBot.pdb
+C:\Users\robbi\hopefully-temp\kinitro\TeamsBotSample\bin\Debug\netstandard2.0\Microsoft.Psi.TeamsBot.xml
+C:\Users\robbi\hopefully-temp\kinitro\TeamsBotSample\obj\Debug\netstandard2.0\MeasurerImplementation.csproj.CopyComplete

@@ -117,8 +117,8 @@
               "C:\\Users\\robbi\\hopefully-temp\\kinitro\\PsiBot\\PsiBot.Model\\PsiBot.Model.csproj": {
                 "projectPath": "C:\\Users\\robbi\\hopefully-temp\\kinitro\\PsiBot\\PsiBot.Model\\PsiBot.Model.csproj"
               },
-              "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBotSample\\TeamsBotSample.csproj": {
-                "projectPath": "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBotSample\\TeamsBotSample.csproj"
+              "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBotSample\\MeasurerImplementation.csproj": {
+                "projectPath": "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBotSample\\MeasurerImplementation.csproj"
               },
               "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBot\\TeamsBot.csproj": {
                 "projectPath": "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBot\\TeamsBot.csproj"
@@ -198,12 +198,12 @@
         }
       }
     },
-    "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBotSample\\TeamsBotSample.csproj": {
+    "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBotSample\\MeasurerImplementation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBotSample\\TeamsBotSample.csproj",
+        "projectUniqueName": "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBotSample\\MeasurerImplementation.csproj",
         "projectName": "Microsoft.Psi.TeamsBot.Sample",
-        "projectPath": "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBotSample\\TeamsBotSample.csproj",
+        "projectPath": "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBotSample\\MeasurerImplementation.csproj",
         "packagesPath": "C:\\Users\\robbi\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\robbi\\hopefully-temp\\kinitro\\TeamsBotSample\\obj\\",
         "projectStyle": "PackageReference",

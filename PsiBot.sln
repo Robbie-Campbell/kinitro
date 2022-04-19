@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeamsBotTester", "TeamsBotTester\TeamsBotTester.csproj", "{B324FE4C-FECF-443D-A0F5-60AAB8450FDE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeamsBotSample", "TeamsBotSample\TeamsBotSample.csproj", "{ADA89909-0ADE-48F7-8D32-6E3474445CFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeasurerImplementation", "TeamsBotSample\MeasurerImplementation.csproj", "{ADA89909-0ADE-48F7-8D32-6E3474445CFB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeamsBot", "TeamsBot\TeamsBot.csproj", "{DA2A73D8-09D6-493F-9ACB-8D446D228497}"
 EndProject
