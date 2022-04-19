@@ -18,11 +18,12 @@ namespace Microsoft.Psi.TeamsBot
         /// <summary>
         /// Gets the data by request of a given participant.
         /// </summary>
+        /// <param name="name">Name of the Participant.</param>
         /// <returns>The Participants Data.</returns>
         [HttpGet("getlinks")]
-        public static Dictionary<string, LinkData> GetAllLinkData()
+        public static Dictionary<string, LinkData> GetAllLinkData(string name)
         {
-            return Measurer.GetAllLinkData();
+            return Measurer.GetAllLinkData(name);
         }
     }
 }

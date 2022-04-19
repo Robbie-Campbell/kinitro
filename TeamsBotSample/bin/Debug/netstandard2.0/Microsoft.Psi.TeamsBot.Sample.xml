@@ -21,10 +21,11 @@
             Generates a URL for the display of user participation data.
             </summary>
         </member>
-        <member name="M:Microsoft.Psi.TeamsBot.LinksController.GetAllLinkData">
+        <member name="M:Microsoft.Psi.TeamsBot.LinksController.GetAllLinkData(System.String)">
             <summary>
             Gets the data by request of a given participant.
             </summary>
+            <param name="name">Name of the Participant.</param>
             <returns>The Participants Data.</returns>
         </member>
         <member name="T:Microsoft.Psi.TeamsBot.Measurer">
@@ -41,12 +42,18 @@
             <param name="screenWidth">Width at which to render the shared screen.</param>
             <param name="screenHeight">Height at which to render the shared screen.</param>
         </member>
-        <member name="M:Microsoft.Psi.TeamsBot.Measurer.UpdateParticipantName(System.String,System.String)">
+        <member name="M:Microsoft.Psi.TeamsBot.Measurer.CreateParticipant(System.String,System.String)">
             <summary>
             Updates the name of a participant.
             </summary>
             <param name="id">The id of the participant.</param>
             <param name="name">The name of the participant.</param>
+        </member>
+        <member name="M:Microsoft.Psi.TeamsBot.Measurer.RemoveParticipant(System.String)">
+            <summary>
+            Removes a participant from list.
+            </summary>
+            <param name="id">The Id to remove from the Lists.</param>
         </member>
         <member name="M:Microsoft.Psi.TeamsBot.Measurer.GetParticipantDataByID(System.String)">
             <summary>
@@ -55,10 +62,11 @@
             <param name="id">The id of the participant.</param>
             <returns>The participant and their data.</returns>
         </member>
-        <member name="M:Microsoft.Psi.TeamsBot.Measurer.GetAllLinkData">
+        <member name="M:Microsoft.Psi.TeamsBot.Measurer.GetAllLinkData(System.String)">
             <summary>
             Gets all link data for api or null value.
             </summary>
+            <param name="name">The name of the participant.</param>
             <returns>Link data or null.</returns>
         </member>
         <member name="M:Microsoft.Psi.TeamsBot.Measurer.UpdateModel(System.Collections.Generic.Dictionary{System.String,Microsoft.Psi.Shared{Microsoft.Psi.Imaging.Image}},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.DateTime}},System.DateTime)">

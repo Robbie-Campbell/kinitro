@@ -1,15 +1,14 @@
 <template>
     <div class="linkDisplay">
+        <input class="form-control" type="text" v-model="this.searchQuery" />
         <div v-if="this.links">
             <div v-for="link in this.links" :key="link.name" v-bind="this.links">
                 <Link :link="link" />
             </div>
         </div>
+        <div v-if="!this.links" class="bg-light p-3"><p>No Links were found... Yet!</p></div>
         <PulseLoader v-if="this.searching" />
-        <div class="p-2 bg-light" v-if="!this.LinkList">
-            <p>Could not find any active links...</p>
-        </div>
-        <button v-on:click="this.getCurrentLinks()" class="btn btn-secondary">Refresh List</button>
+        <button v-on:click="this.getCurrentLinks()" class="btn btn-secondary">Search for Your URL</button>
     </div>
 </template>
 
@@ -23,13 +22,10 @@ export default {
         Link,
         PulseLoader
     },
-    mounted() {
-        console.log(process.env.TEAMS_REFERENCE);
-        this.getCurrentLinks();
-    },
     data() {
         return {
-            links: {},
+            links: null,
+            searchQuery: null,
             searching: false,
         }
     },
@@ -37,9 +33,12 @@ export default {
         getCurrentLinks() {
             this.searching = true;
             return axios
-            .get(`https://a7f2-194-80-64-241.ngrok.io/api/links/getlinks`)
+            .get(`https://a7f2-194-80-64-241.ngrok.io/api/links/getlinks/${this.searchQuery}`)
                 .then((response) => {
-                    this.links = response.data;
+                    if (response)
+                        this.links = response.data;
+                    else
+                        this.links = null;
             }).catch((e) => {
                 console.log(e)
                 this.links = null;
@@ -47,6 +46,6 @@ export default {
                 this.searching = false;
             });
         },
-    }
+    },
 }
 </script>

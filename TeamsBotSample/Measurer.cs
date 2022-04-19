@@ -45,7 +45,7 @@ namespace Microsoft.Psi.TeamsBot
         /// </summary>
         /// <param name="id">The id of the participant.</param>
         /// <param name="name">The name of the participant.</param>
-        public static void UpdateParticipantName(string id, string name)
+        public static void CreateParticipant(string id, string name)
         {
             StaticParticipants.Add(id, new StaticParticipant());
             StaticParticipants[id].TimeInMeeting.Start();
@@ -54,6 +54,16 @@ namespace Microsoft.Psi.TeamsBot
             linkData[id].Link = webLink;
             staticParticipants[id].ParticipantName = name;
             linkData[id].Name = name;
+        }
+
+        /// <summary>
+        /// Removes a participant from list.
+        /// </summary>
+        /// <param name="id">The Id to remove from the Lists.</param>
+        public static void RemoveParticipant(string id)
+        {
+            staticParticipants.Remove(id);
+            linkData.Remove(id);
         }
 
         /// <summary>
@@ -74,15 +84,12 @@ namespace Microsoft.Psi.TeamsBot
         /// <summary>
         /// Gets all link data for api or null value.
         /// </summary>
+        /// <param name="name">The name of the participant.</param>
         /// <returns>Link data or null.</returns>
-        public static Dictionary<string, LinkData> GetAllLinkData()
+        public static Dictionary<string, LinkData> GetAllLinkData(string name)
         {
-            if (linkData.Count > 0)
-            {
-                return LinkData;
-            }
-
-            return null;
+            return linkData.Where(i => i.Value.Name.ToLower(System.Globalization.CultureInfo.CurrentCulture)
+            .Contains(name.ToLower(System.Globalization.CultureInfo.CurrentCulture))).ToDictionary(i => i.Key, i => i.Value);
         }
 
         /// <inheritdoc />

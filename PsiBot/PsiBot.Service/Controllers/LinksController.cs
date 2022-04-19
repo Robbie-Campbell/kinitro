@@ -20,10 +20,10 @@ namespace PsiBot.Services.Controllers
         /// Gets the data by request of a given participant.
         /// </summary>
         /// <returns>The Participants Data.</returns>
-        [HttpGet("getlinks")]
-        public Dictionary<string, LinkData> GetAllLinkData() {
+        [HttpGet("getlinks/{name}")]
+        public Dictionary<string, LinkData> GetAllLinkData(string name) {
 
-            return Measurer.GetAllLinkData();
+            return Measurer.GetAllLinkData(name);
         }
     }
 }
