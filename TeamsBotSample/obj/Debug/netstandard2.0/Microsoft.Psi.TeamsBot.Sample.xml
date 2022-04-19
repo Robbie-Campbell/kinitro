@@ -102,6 +102,11 @@
             Gets or sets time spent speaking.
             </summary>
         </member>
+        <member name="P:Microsoft.Psi.TeamsBot.StaticParticipant.MeetingId">
+            <summary>
+            Gets or sets meeting ID.
+            </summary>
+        </member>
         <member name="P:Microsoft.Psi.TeamsBot.StaticParticipant.TimeInMeeting">
             <summary>
             Gets or sets time spent in meeting.

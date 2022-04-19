@@ -111,7 +111,6 @@ namespace PsiBot.Services.Bot
                     if (identity != null)
                     {
                         buffers.Add(identity.Id, (new AudioBuffer(data, audioFormat), audioFrameTimestamp));
-                        Measurer.UpdateParticipantName(identity.Id, identity.DisplayName);
                     }
                     else
                     {

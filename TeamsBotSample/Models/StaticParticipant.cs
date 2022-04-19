@@ -24,12 +24,18 @@ namespace Microsoft.Psi.TeamsBot
             this.MeetingTotalTimeSpoken = 0;
             this.MeetingTotalTimeInMeeting = 0;
             this.IsSpeaking = false;
+            this.MeetingId = string.Empty;
         }
 
         /// <summary>
         /// Gets or sets time spent speaking.
         /// </summary>
         public Stopwatch TimeSpoken { get; set; }
+
+        /// <summary>
+        /// Gets or sets meeting ID.
+        /// </summary>
+        public string MeetingId { get; set; }
 
         /// <summary>
         /// Gets or sets time spent in meeting.

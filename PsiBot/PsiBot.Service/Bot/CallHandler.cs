@@ -198,6 +198,7 @@ namespace PsiBot.Services.Bot
             {
                 participants.Add(participant);
                 participant.OnUpdated += this.OnParticipantUpdated;
+                Measurer.UpdateParticipantName(participant.Resource.Info.Identity.User.Id, participant.Resource.Info.Identity.User.DisplayName);
                 this.SubscribeToParticipantVideo(participant, forceSubscribe: false);
             }
             else

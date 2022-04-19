@@ -20,7 +20,6 @@ namespace Microsoft.Psi.TeamsBot
         private const double BallWindowScale = 0.1;
         private static Dictionary<string, StaticParticipant> staticParticipants = new Dictionary<string, StaticParticipant>();
         private static Dictionary<string, LinkData> linkData = new Dictionary<string, LinkData>();
-        private string webURL = "http://localhost:8080/data/";
 
         private double ballX = 0.0;
         private double ballY = 0.0;
@@ -48,6 +47,11 @@ namespace Microsoft.Psi.TeamsBot
         /// <param name="name">The name of the participant.</param>
         public static void UpdateParticipantName(string id, string name)
         {
+            StaticParticipants.Add(id, new StaticParticipant());
+            StaticParticipants[id].TimeInMeeting.Start();
+            string webLink = "http://localhost:8080/data/" + id;
+            linkData.Add(id, new LinkData());
+            linkData[id].Link = webLink;
             staticParticipants[id].ParticipantName = name;
             linkData[id].Name = name;
         }
@@ -102,15 +106,6 @@ namespace Microsoft.Psi.TeamsBot
             foreach (var frame in video)
             {
                 participants.Add(frame.Key, new Participant(frame.Value, Math.Sin(theta), Math.Cos(theta), ThumbnailWindowScale, ThumbnailWindowScale));
-                if (!StaticParticipants.ContainsKey(frame.Key))
-                {
-                    StaticParticipants.Add(frame.Key, new StaticParticipant());
-                    StaticParticipants[frame.Key].TimeInMeeting.Start();
-                    string webLink = this.webURL + frame.Key;
-                    linkData.Add(frame.Key, new LinkData());
-                    linkData[frame.Key].Link = webLink;
-                }
-
                 theta += inc;
             }
 
