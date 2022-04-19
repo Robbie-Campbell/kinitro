@@ -117,6 +117,7 @@ namespace PsiBot.Services.Bot
             {
                 this.GraphLogger.Error($"PSI PIPELINE ERROR: {ex.Exception.Message}");
             };
+            Console.WriteLine(this.Call.Resource.MeetingInfo);
             this.pipeline.RunAsync();
         }
 

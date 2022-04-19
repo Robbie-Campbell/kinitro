@@ -108,7 +108,6 @@ namespace PsiBot.Services.Bot
             ArgumentVerifier.ThrowOnNullArgument(mediaSession, nameof(mediaSession));
             ArgumentVerifier.ThrowOnNullArgument(logger, nameof(logger));
             ArgumentVerifier.ThrowOnNullArgument(botConfiguration, nameof(botConfiguration));
-
             this.mediaSession = mediaSession;
             this.logger = logger;
 
