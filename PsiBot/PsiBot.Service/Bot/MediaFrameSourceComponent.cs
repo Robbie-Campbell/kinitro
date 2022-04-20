@@ -165,6 +165,7 @@ namespace PsiBot.Services.Bot
             if (identity != null)
             {
                 streams.Add(identity.Id, (sharedImage, videoFrameTimestamp));
+                Measurer.UpdateParticipantName(identity.Id, identity.DisplayName);
             }
             else
             {

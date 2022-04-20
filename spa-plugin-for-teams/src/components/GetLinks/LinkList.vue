@@ -33,8 +33,9 @@ export default {
         getCurrentLinks() {
             this.searching = true;
             return axios
-            .get(`https://a7f2-194-80-64-241.ngrok.io/api/links/getlinks/${this.searchQuery}`)
+            .get(`https://18f0-82-24-11-13.ngrok.io/api/links/getlinks/${this.searchQuery}`)
                 .then((response) => {
+                    console.log("here");
                     if (response)
                         this.links = response.data;
                     else

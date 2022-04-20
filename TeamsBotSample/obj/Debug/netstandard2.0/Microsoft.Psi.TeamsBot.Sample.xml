@@ -42,18 +42,12 @@
             <param name="screenWidth">Width at which to render the shared screen.</param>
             <param name="screenHeight">Height at which to render the shared screen.</param>
         </member>
-        <member name="M:Microsoft.Psi.TeamsBot.Measurer.CreateParticipant(System.String,System.String)">
+        <member name="M:Microsoft.Psi.TeamsBot.Measurer.UpdateParticipantName(System.String,System.String)">
             <summary>
             Updates the name of a participant.
             </summary>
             <param name="id">The id of the participant.</param>
             <param name="name">The name of the participant.</param>
-        </member>
-        <member name="M:Microsoft.Psi.TeamsBot.Measurer.RemoveParticipant(System.String)">
-            <summary>
-            Removes a participant from list.
-            </summary>
-            <param name="id">The Id to remove from the Lists.</param>
         </member>
         <member name="M:Microsoft.Psi.TeamsBot.Measurer.GetParticipantDataByID(System.String)">
             <summary>

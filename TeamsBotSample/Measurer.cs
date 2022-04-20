@@ -34,32 +34,31 @@ namespace Microsoft.Psi.TeamsBot
 
         private static Dictionary<string, StaticParticipant> StaticParticipants { get => staticParticipants; }
 
-        private static Dictionary<string, LinkData> LinkData { get => linkData; }
+        /*
+        public static void CreateParticipant(string id, string name)
+        {
+            StaticParticipants.Add(id, new StaticParticipant());
+            StaticParticipants[id].TimeInMeeting.Start();
+            string webLink =  + id;
+            linkData.Add(id, new LinkData());
+            linkData[id].Link = webLink;
+            staticParticipants[id].ParticipantName = name;
+            linkData[id].Name = name;
+        }
+        */
 
         /// <summary>
         /// Updates the name of a participant.
         /// </summary>
         /// <param name="id">The id of the participant.</param>
         /// <param name="name">The name of the participant.</param>
-        public static void CreateParticipant(string id, string name)
+        public static void UpdateParticipantName(string id, string name)
         {
-            StaticParticipants.Add(id, new StaticParticipant());
-            StaticParticipants[id].TimeInMeeting.Start();
-            string webLink = "http://localhost:8080/data/" + id;
-            linkData.Add(id, new LinkData());
-            linkData[id].Link = webLink;
-            staticParticipants[id].ParticipantName = name;
-            linkData[id].Name = name;
-        }
-
-        /// <summary>
-        /// Removes a participant from list.
-        /// </summary>
-        /// <param name="id">The Id to remove from the Lists.</param>
-        public static void RemoveParticipant(string id)
-        {
-            staticParticipants.Remove(id);
-            linkData.Remove(id);
+            if (staticParticipants.ContainsKey(id))
+            {
+                staticParticipants[id].ParticipantName = name;
+                linkData[id].Name = name;
+            }
         }
 
         /// <summary>
@@ -108,6 +107,14 @@ namespace Microsoft.Psi.TeamsBot
             foreach (var frame in video)
             {
                 participants.Add(frame.Key, new Participant(frame.Value, Math.Sin(theta), Math.Cos(theta), ThumbnailWindowScale, ThumbnailWindowScale));
+                if (!StaticParticipants.ContainsKey(frame.Key))
+                {
+                    StaticParticipants.Add(frame.Key, new StaticParticipant());
+                    StaticParticipants[frame.Key].TimeInMeeting.Start();
+                    string webLink = "http://localhost:8080/data/" + frame.Key;
+                    linkData.Add(frame.Key, new LinkData());
+                    linkData[frame.Key].Link = webLink;
+                }
             }
 
             // Checks if anyone is speaking
