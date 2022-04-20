@@ -131,19 +131,19 @@ namespace Microsoft.Psi.TeamsBot
                         bool isSpeaking = s.Value.Select(x => s.Key).Any();
                         if (isSpeaking)
                         {
-                            if (!currentParticipant.IsSpeaking && currentParticipant.TimeSpoken % 200 == 0)
+                            if (currentParticipant.IsSpeaking == 1)
                             {
                                 currentParticipant.NumberOfTimesSpoken++;
                             }
 
-                            currentParticipant.IsSpeaking = true;
+                            currentParticipant.IsSpeaking++;
                             currentParticipant.TimeSpoken += 50;
                             currentParticipant.SetMeetingAverageForTimeSpeaking(StaticParticipants);
                             linkData[s.Key].Link = linkData[s.Key].Link;
                         }
                         else
                         {
-                            currentParticipant.IsSpeaking = false;
+                            currentParticipant.IsSpeaking = 0;
                         }
                     }
                 }
