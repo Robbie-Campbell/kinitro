@@ -2,7 +2,7 @@
     <div class="linkDisplay">
         <input class="form-control" type="text" v-model="this.searchQuery" />
         <div v-if="this.links">
-            <div v-for="link in this.links" :key="link.name" v-bind="this.links">
+            <div v-for="link in this.links.results" v-bind:key="link.name" v-bind="this.links">
                 <Link :link="link" />
             </div>
         </div>
@@ -24,7 +24,7 @@ export default {
     },
     data() {
         return {
-            links: null,
+            links: {},
             searchQuery: null,
             searching: false,
         }
@@ -35,11 +35,7 @@ export default {
             return axios
             .get(`https://18f0-82-24-11-13.ngrok.io/api/links/getlinks/${this.searchQuery}`)
                 .then((response) => {
-                    console.log("here");
-                    if (response)
-                        this.links = response.data;
-                    else
-                        this.links = null;
+                    this.links['results'] = response.data;
             }).catch((e) => {
                 console.log(e)
                 this.links = null;

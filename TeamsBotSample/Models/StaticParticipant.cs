@@ -17,7 +17,7 @@ namespace Microsoft.Psi.TeamsBot
         /// </summary>
         public StaticParticipant()
         {
-            this.TimeSpoken = new Stopwatch();
+            this.TimeSpoken = 0;
             this.TimeInMeeting = new Stopwatch();
             this.ParticipantName = string.Empty;
             this.NumberOfTimesSpoken = 0;
@@ -30,7 +30,7 @@ namespace Microsoft.Psi.TeamsBot
         /// <summary>
         /// Gets or sets time spent speaking.
         /// </summary>
-        public Stopwatch TimeSpoken { get; set; }
+        public int TimeSpoken { get; set; }
 
         /// <summary>
         /// Gets or sets meeting ID.
@@ -83,7 +83,7 @@ namespace Microsoft.Psi.TeamsBot
             foreach (StaticParticipant participant in participants.Values)
             {
                 totalMeetingTime += participant.TimeInMeeting.ElapsedMilliseconds;
-                totalTimeSpeaking += participant.TimeSpoken.ElapsedMilliseconds;
+                totalTimeSpeaking += participant.TimeSpoken;
             }
 
             this.MeetingTotalTimeInMeeting = totalMeetingTime;

@@ -129,21 +129,20 @@ namespace Microsoft.Psi.TeamsBot
 
                         // Gets whether the participant is speaking
                         bool isSpeaking = s.Value.Select(x => s.Key).Any();
-                        if (isSpeaking && !currentParticipant.TimeSpoken.IsRunning)
+                        if (isSpeaking)
                         {
-                            if (!currentParticipant.IsSpeaking && currentParticipant.TimeSpoken.ElapsedMilliseconds % 1000 == 0)
+                            if (!currentParticipant.IsSpeaking && currentParticipant.TimeSpoken % 200 == 0)
                             {
-                                currentParticipant.NumberOfTimesSpoken += 1;
+                                currentParticipant.NumberOfTimesSpoken++;
                             }
 
                             currentParticipant.IsSpeaking = true;
-                            currentParticipant.TimeSpoken.Start();
+                            currentParticipant.TimeSpoken += 50;
                             currentParticipant.SetMeetingAverageForTimeSpeaking(StaticParticipants);
                             linkData[s.Key].Link = linkData[s.Key].Link;
                         }
                         else
                         {
-                            currentParticipant.TimeSpoken.Stop();
                             currentParticipant.IsSpeaking = false;
                         }
                     }

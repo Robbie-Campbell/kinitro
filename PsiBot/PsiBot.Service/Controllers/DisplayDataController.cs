@@ -39,10 +39,10 @@ namespace PsiBot.Services.Controllers
             Dictionary<string, StaticParticipant> staticParticipants = new Dictionary<string, StaticParticipant>();
             staticParticipants.Add("1234", new StaticParticipant());
             staticParticipants["1234"].TimeInMeeting.Start();
-            staticParticipants["1234"].TimeSpoken.Start();
+            staticParticipants["1234"].TimeSpoken = 200;
             staticParticipants.Add("12345", new StaticParticipant());
             staticParticipants["12345"].TimeInMeeting.Start();
-            staticParticipants["12345"].TimeSpoken.Start();
+            staticParticipants["12345"].TimeSpoken = 200;
             return staticParticipants[id];
         }
     }
