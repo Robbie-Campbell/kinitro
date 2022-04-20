@@ -61,7 +61,7 @@
             updateData() {
                 const id = this.$route.params.slug;
                 return axios
-                .get(`https://18f0-82-24-11-13.ngrok.io/api/displaydata/${id}`)
+                .get(`https://e3b5-194-80-64-241.ngrok.io/api/displaydata/${id}`)
                     .then((response) => {
                         this.participant = response.data;
                     }).catch(() => {
