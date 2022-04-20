@@ -111,7 +111,7 @@ namespace Microsoft.Psi.TeamsBot
                 {
                     StaticParticipants.Add(frame.Key, new StaticParticipant());
                     StaticParticipants[frame.Key].TimeInMeeting.Start();
-                    string webLink = "http://192.168.0.64:8080/data/" + frame.Key;
+                    string webLink = "https://participation-measurer-rr56qis6kq-nw.a.run.app/data/" + frame.Key;
                     linkData.Add(frame.Key, new LinkData());
                     linkData[frame.Key].Link = webLink;
                 }
