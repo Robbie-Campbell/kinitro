@@ -33,7 +33,7 @@ export default {
         getCurrentLinks() {
             this.searching = true;
             return axios
-            .get(`https://e3b5-194-80-64-241.ngrok.io/api/links/getlinks/${this.searchQuery}`)
+            .get(`${process.env.VUE_APP_API_LINK}/api/links/getlinks/${this.searchQuery}`)
                 .then((response) => {
                     this.links['results'] = response.data;
             }).catch((e) => {

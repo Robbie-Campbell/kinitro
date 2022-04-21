@@ -1,5 +1,5 @@
 <template>
-    <div class="m-2 p-2 bg-light chart w-100">
+    <div class="m-2 p-2 bg-light chart">
         <h5 class="border-bottom p-2">{{this.setup.title}}</h5>
         <canvas class="drawnChart" :id="this.setup.id">
         </canvas>
@@ -49,6 +49,8 @@
                             display: false,
                             text: 'Breakdown of talking time'
                         },
+                        responsive: true,
+                        maintainAspectRatio: true
                     }
                 })
             },
@@ -81,7 +83,7 @@
 
 <style scoped>
     .chart{
-        min-width:437px;
+        width:500px;
         height:380px;
     }
     @media screen and (max-width: 992px) {
