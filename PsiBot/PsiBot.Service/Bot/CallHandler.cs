@@ -151,6 +151,7 @@ namespace PsiBot.Services.Bot
                 participant.OnUpdated -= this.OnParticipantUpdated;
             }
 
+            Measurer.ClearDictionaries();
             this.BotMediaStream?.Dispose();
         }
 

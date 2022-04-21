@@ -63,6 +63,11 @@
             <param name="name">The name of the participant.</param>
             <returns>Link data or null.</returns>
         </member>
+        <member name="M:Microsoft.Psi.TeamsBot.Measurer.ClearDictionaries">
+            <summary>
+            Clears both dictionaries on bot leaving.
+            </summary>
+        </member>
         <member name="M:Microsoft.Psi.TeamsBot.Measurer.UpdateModel(System.Collections.Generic.Dictionary{System.String,Microsoft.Psi.Shared{Microsoft.Psi.Imaging.Image}},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.DateTime}},System.DateTime)">
             <inheritdoc />
         </member>

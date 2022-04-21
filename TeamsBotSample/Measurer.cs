@@ -87,6 +87,15 @@ namespace Microsoft.Psi.TeamsBot
             .Contains(name.ToLower(System.Globalization.CultureInfo.CurrentCulture))).ToDictionary(i => i.Key, i => i.Value);
         }
 
+        /// <summary>
+        /// Clears both dictionaries on bot leaving.
+        /// </summary>
+        public static void ClearDictionaries()
+        {
+            linkData.Clear();
+            staticParticipants.Clear();
+        }
+
         /// <inheritdoc />
         protected override IEnumerable<Participant> UpdateModel(Dictionary<string, Shared<PsiImage>> video, Dictionary<string, List<DateTime>> speech, DateTime originatingTime)
         {
@@ -128,16 +137,16 @@ namespace Microsoft.Psi.TeamsBot
                         StaticParticipant currentParticipant = StaticParticipants[s.Key];
 
                         // Gets whether the participant is speaking
-                        bool isSpeaking = s.Value.Select(x => s.Key).Any();
+                        bool isSpeaking = s.Value.Select(x => s.Key).Count() > 3;
                         if (isSpeaking)
                         {
-                            if (currentParticipant.IsSpeaking == 1)
+                            currentParticipant.IsSpeaking++;
+                            if (currentParticipant.IsSpeaking == 2)
                             {
                                 currentParticipant.NumberOfTimesSpoken++;
                             }
 
-                            currentParticipant.IsSpeaking++;
-                            currentParticipant.TimeSpoken += 50;
+                            currentParticipant.TimeSpoken += 40;
                             currentParticipant.SetMeetingAverageForTimeSpeaking(StaticParticipants);
                             linkData[s.Key].Link = linkData[s.Key].Link;
                         }
