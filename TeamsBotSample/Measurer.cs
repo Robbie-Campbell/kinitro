@@ -146,7 +146,7 @@ namespace Microsoft.Psi.TeamsBot
                                 currentParticipant.NumberOfTimesSpoken++;
                             }
 
-                            currentParticipant.TimeSpoken += 40;
+                            currentParticipant.TimeSpoken += 50;
                             currentParticipant.SetMeetingAverageForTimeSpeaking(StaticParticipants);
                             linkData[s.Key].Link = linkData[s.Key].Link;
                         }

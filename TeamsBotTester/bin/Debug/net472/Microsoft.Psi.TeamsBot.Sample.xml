@@ -16,6 +16,18 @@
             <param name="id">The id of the participant.</param>
             <returns>The Participants Data.</returns>
         </member>
+        <member name="T:Microsoft.Psi.TeamsBot.LinksController">
+            <summary>
+            Generates a URL for the display of user participation data.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Psi.TeamsBot.LinksController.GetAllLinkData(System.String)">
+            <summary>
+            Gets the data by request of a given participant.
+            </summary>
+            <param name="name">Name of the Participant.</param>
+            <returns>The Participants Data.</returns>
+        </member>
         <member name="T:Microsoft.Psi.TeamsBot.Measurer">
             <summary>
             Represents a participant engagement component base class.
@@ -30,6 +42,13 @@
             <param name="screenWidth">Width at which to render the shared screen.</param>
             <param name="screenHeight">Height at which to render the shared screen.</param>
         </member>
+        <member name="M:Microsoft.Psi.TeamsBot.Measurer.UpdateParticipantName(System.String,System.String)">
+            <summary>
+            Updates the name of a participant.
+            </summary>
+            <param name="id">The id of the participant.</param>
+            <param name="name">The name of the participant.</param>
+        </member>
         <member name="M:Microsoft.Psi.TeamsBot.Measurer.GetParticipantDataByID(System.String)">
             <summary>
             Gets the participant data by ID.
@@ -37,11 +56,43 @@
             <param name="id">The id of the participant.</param>
             <returns>The participant and their data.</returns>
         </member>
+        <member name="M:Microsoft.Psi.TeamsBot.Measurer.GetAllLinkData(System.String)">
+            <summary>
+            Gets all link data for api or null value.
+            </summary>
+            <param name="name">The name of the participant.</param>
+            <returns>Link data or null.</returns>
+        </member>
+        <member name="M:Microsoft.Psi.TeamsBot.Measurer.ClearDictionaries">
+            <summary>
+            Clears both dictionaries on bot leaving.
+            </summary>
+        </member>
         <member name="M:Microsoft.Psi.TeamsBot.Measurer.UpdateModel(System.Collections.Generic.Dictionary{System.String,Microsoft.Psi.Shared{Microsoft.Psi.Imaging.Image}},System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.DateTime}},System.DateTime)">
             <inheritdoc />
         </member>
         <member name="M:Microsoft.Psi.TeamsBot.Measurer.UpdateVisual(System.Collections.Generic.IEnumerable{Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase.Participant},System.Drawing.Graphics)">
             <inheritdoc />
+        </member>
+        <member name="T:Microsoft.Psi.TeamsBot.LinkData">
+            <summary>
+            Stores the data neccessary for users to look at their participation data.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Psi.TeamsBot.LinkData.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Psi.TeamsBot.LinkData"/> class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.LinkData.Name">
+            <summary>
+            Gets or sets the name of a participant.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.LinkData.Link">
+            <summary>
+            Gets or sets the link for  participant to view.
+            </summary>
         </member>
         <member name="T:Microsoft.Psi.TeamsBot.StaticParticipant">
             <summary>
@@ -58,10 +109,46 @@
             Gets or sets time spent speaking.
             </summary>
         </member>
+        <member name="P:Microsoft.Psi.TeamsBot.StaticParticipant.MeetingId">
+            <summary>
+            Gets or sets meeting ID.
+            </summary>
+        </member>
         <member name="P:Microsoft.Psi.TeamsBot.StaticParticipant.TimeInMeeting">
             <summary>
             Gets or sets time spent in meeting.
             </summary>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.StaticParticipant.MeetingTotalTimeSpoken">
+            <summary>
+            Gets or sets the average time spent speaking in a meeting.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.StaticParticipant.MeetingTotalTimeInMeeting">
+            <summary>
+            Gets or sets the average time spent speaking in a meeting.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.StaticParticipant.ParticipantName">
+            <summary>
+            Gets or sets the id of the participant.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.StaticParticipant.NumberOfTimesSpoken">
+            <summary>
+            Gets or sets the number of times spoken in the meeting.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.StaticParticipant.IsSpeaking">
+            <summary>
+            Gets or sets a value indicating whether the participant is currently speaking.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Psi.TeamsBot.StaticParticipant.SetMeetingAverageForTimeSpeaking(System.Collections.Generic.Dictionary{System.String,Microsoft.Psi.TeamsBot.StaticParticipant})">
+            <summary>
+            Establshes the average amount of time spoken for the meeting.
+            </summary>
+            <param name="participants">All of the meeting participants.</param>
         </member>
         <member name="T:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase">
             <summary>
