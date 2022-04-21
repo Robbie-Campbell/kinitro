@@ -45,7 +45,7 @@
                     this.checkForSuccessfulConnection(checkForUpdate);
                     this.attempts++;
                     this.updateAllData();
-                }, 5000)
+                }, 2500)
             });
         },
         data() {
