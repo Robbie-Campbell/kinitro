@@ -6,7 +6,7 @@
                 <Link :link="link" />
             </div>
         </div>
-        <div v-if="!this.links" class="bg-light p-3"><p>No Links were found... Yet!</p></div>
+        <div v-if="!this.links || !this.links['results'] == ''" class="bg-light p-3"><p>No Links were found... Yet!</p></div>
         <PulseLoader v-if="this.searching" />
         <button v-on:click="this.getCurrentLinks()" class="btn btn-secondary">Search for Your URL</button>
     </div>
@@ -35,9 +35,8 @@ export default {
             return axios
             .get(`${process.env.VUE_APP_API_LINK}/api/links/getlinks/${this.searchQuery}`)
                 .then((response) => {
-                    this.links['results'] = response.data;
-            }).catch((e) => {
-                console.log(e)
+                this.links['results'] = response.data;
+            }).catch(() => {
                 this.links = null;
             }).finally(() => {
                 this.searching = false;
