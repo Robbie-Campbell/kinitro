@@ -14,7 +14,7 @@
         data() {
             return {
                 data: {},
-                setup: {'labels': ["Time Spent Speaking", "Time in Meeting"],
+                setup: {'labels': ["Time Spent Speaking", "Time Not Speaking"],
                     'title': 'Your Time Spent Speaking in Meeting',
                     'colors': ['#ab500f', '#6e4115'], 'id': "individualPie"},
             }
@@ -31,7 +31,7 @@
                 var percentageTimeSpeaking = this.participant['timeSpoken'] / this.participant['timeInMeeting']['elapsedMilliseconds'] * 100;
                 this.data = {
                     'values': [Math.round(percentageTimeSpeaking), 100 - Math.round(percentageTimeSpeaking)],
-                    'timeValues': [this.participant['timeSpoken'], this.participant['timeInMeeting']['elapsedMilliseconds']]
+                    'timeValues': [this.participant['timeSpoken'], this.participant['timeInMeeting']['elapsedMilliseconds'] - this.participant['timeSpoken']]
                 }
             },
         }

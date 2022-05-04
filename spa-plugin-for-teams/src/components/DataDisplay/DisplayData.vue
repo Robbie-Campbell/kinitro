@@ -11,7 +11,7 @@
                 <div class="charts w-100 justify-content-between">
                     <IndividualPie :participant='this.participant' />
                     <MeetingPie :participant='this.participant' />
-                    <!-- <OtherParticipants :participant='this.participant' /> -->
+                    <OtherParticipants :participant='this.participant' />
                 </div>
             </div>
             <div class="justify-content-center p-2 m-2 mt-5 bg-light w-100" v-else>
@@ -26,7 +26,7 @@
     import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
     import IndividualPie from '@/components/DataDisplay/IndividualPie.vue'
     import MeetingPie from '@/components/DataDisplay/MeetingPie.vue'
-    // import OtherParticipants from '@/components/DataDisplay/OtherParticipantsSpeakingTime.vue'
+    import OtherParticipants from '@/components/DataDisplay/OtherParticipantsSpeakingTime.vue'
     export default {
         name: 'DisplayData',
         emits: ['nameRecieved'],
@@ -35,7 +35,7 @@
             'PulseLoader': PulseLoader,
             'IndividualPie': IndividualPie,
             'MeetingPie': MeetingPie,
-            // 'OtherParticipants': OtherParticipants,
+            'OtherParticipants': OtherParticipants,
         },
         watch: {
             name: function() {

@@ -13,44 +13,65 @@
         },
         data() {
             return {
-                data: {
-                    parsedOtherUsers: {},
-                },
-                setup: {'labels': this.getOtherUserDetails('label'),
+                data: {},
+                setup: {'labels': ['Loading...'],
                     'title': 'How others have performed',
-                    'colors': this.getOtherUserDetails('color'), 'id': "otherParticipants"},
+                    'colors': ['#FFFFFF', '#000000'], 'id': "otherParticipants", watch: true},
+                parsedOtherUsers: {},
+                hasNotBeenParsed: true
             }
         },
         props: ['participant'],
         watch: {
             participant: function() {
                 if (this.participant['timeSpoken'])
+                {
+                    if (this.hasNotBeenParsed)
+                    {
+                        this.parseOtherUsers();
+                        this.hasNotBeenParsed = false;
+                    }
                     this.updateData();
+                }
             }
         },
         methods: {
             updateData() {
-                var percentageTimeSpeaking = this.participant['timeSpoken'] / this.participant['timeInMeeting']['elapsedMilliseconds'] * 100;
+                this.updateSetup();
+                this.updateTimeSpoken();
                 this.data = {
-                    'values': [Math.round(percentageTimeSpeaking), 100 - Math.round(percentageTimeSpeaking)],
-                    'timeValues': [this.getOtherUserDetails['timeSpoken']]
+                    'values': this.getOtherUserDetails('timeSpoken'),
+                    'timeValues': this.getOtherUserDetails('timeSpoken')
                 }
             },
             parseOtherUsers() {
-                let i = 0;
-                this.participant['otherParticipantsSpeakingTime'].array.forEach(element => {
-                    this.parsedOtherUsers[i].label = 'Participant ' + i;
-                    this.parsedOtherUsers[i].timeSpoken = element;
-                    this.parsedOtherUsers[i].color = '#'+(Math.random()*0xFFFFFF<<0).toString(16)
+                let i = 1;
+                Object.values(this.participant['otherParticipantsSpeakingTime']).forEach(element => {
+                    this.parsedOtherUsers[i] = {'label': 'Participant ' + i,
+                                                'timeSpoken': element, 
+                                                'color': '#'+(Math.random()*0xFFFFFF<<0).toString(16)};
+                    i++;
                 });
             },
             getOtherUserDetails(param) {
                 let returnArr = [];
-                this.parsedOtherUsers.forEach(element => {
-                    returnArr += element[param];
+                Object.values(this.parsedOtherUsers).forEach(element => {
+                    returnArr.push(element[param]);
                 });
                 return returnArr;
             },
+            updateTimeSpoken(){
+let             i = 1;
+                Object.values(this.participant['otherParticipantsSpeakingTime']).forEach(element => {
+                    this.parsedOtherUsers[i]['timeSpoken'] = element;                    
+                    i++;
+                });            
+            },
+            updateSetup() {
+                this.setup ={'labels': this.getOtherUserDetails('label'),
+                    'title': 'How much time others have spoken',
+                    'colors': this.getOtherUserDetails('color'), 'id': "otherParticipants"}
+            }
         }
     }
 </script>

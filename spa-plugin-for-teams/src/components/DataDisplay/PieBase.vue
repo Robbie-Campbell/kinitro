@@ -55,9 +55,15 @@
             },
             updatePieData() {
                 if (this.data.values) {
+                    console.log(this.data);
                     this.pie.data.datasets[0].data = this.data.values;
+                    this.updatePieSetup();
                 }
                 this.pie.update();
+            },
+            updatePieSetup() {
+                this.pie.data.labels = this.setup.labels;
+                this.pie.data.datasets[0].backgroundColor = this.setup.colors;
             },
             msToTime(s) {
 
