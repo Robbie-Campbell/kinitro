@@ -16,8 +16,8 @@
                 data: {
                     totalSpeakingtime: 1,
                 },
-                setup: {'labels': ["Time Spent Speaking", "Time Not Speaking"],
-                    'title': 'Meeting Average for Time Spent Speaking',
+                setup: {'labels': ["Time Speaking", "Time Not Speaking"],
+                    'title': 'Meeting Average for Speaking Time',
                     'colors': ['#93003a', '#ff005e'], 'id': "meetingPie"},
             }
         },

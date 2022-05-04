@@ -15,7 +15,7 @@
             return {
                 data: {},
                 setup: {'labels': ['Loading...'],
-                    'title': 'How others have performed',
+                    'title': 'The Time Spoken by Each Participant',
                     'colors': ['#FFFFFF', '#000000'], 'id': "otherParticipants", watch: true},
                 parsedOtherUsers: {},
                 hasNotBeenParsed: true,

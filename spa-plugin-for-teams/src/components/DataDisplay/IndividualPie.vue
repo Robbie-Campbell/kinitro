@@ -14,8 +14,8 @@
         data() {
             return {
                 data: {},
-                setup: {'labels': ["Time Spent Speaking", "Time Not Speaking"],
-                    'title': 'Your Time Spent Speaking in Meeting',
+                setup: {'labels': ["Time Speaking", "Time Not Speaking"],
+                    'title': 'Your Personal Time Spent Speaking',
                     'colors': ['#00429d', '#5cc6b2'], 'id': "individualPie"},
             }
         },
