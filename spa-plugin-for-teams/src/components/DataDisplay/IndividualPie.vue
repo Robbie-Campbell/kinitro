@@ -16,7 +16,7 @@
                 data: {},
                 setup: {'labels': ["Time Spent Speaking", "Time Not Speaking"],
                     'title': 'Your Time Spent Speaking in Meeting',
-                    'colors': ['#ab500f', '#6e4115'], 'id': "individualPie"},
+                    'colors': ['#00429d', '#5cc6b2'], 'id': "individualPie"},
             }
         },
         props: ['participant'],

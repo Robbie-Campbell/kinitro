@@ -5,6 +5,7 @@
                 <h3 class="border-bottom p-2">Measure your participation!</h3>
                 <p>Participant Name: {{this.user}}</p>
                 <p>Number of times spoken: {{this.numberTimesSpoken}}</p>
+                <h3>To view the percentages of these values, please hover over a segment of the pie chart.</h3>
             </div>
             <div v-if="this.searchingForUserOrUserHasBeenFound()">
                 <PulseLoader class="pulse-loader" v-if="this.loading"/>

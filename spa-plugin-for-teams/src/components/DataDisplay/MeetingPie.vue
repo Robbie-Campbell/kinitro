@@ -18,7 +18,7 @@
                 },
                 setup: {'labels': ["Time Spent Speaking", "Time Not Speaking"],
                     'title': 'Meeting Average for Time Spent Speaking',
-                    'colors': ['#00003f', '#00008b'], 'id': "meetingPie"},
+                    'colors': ['#93003a', '#ff005e'], 'id': "meetingPie"},
             }
         },
         props: ['participant'],
@@ -38,12 +38,12 @@
                 }     
             },
             getTotalTimeSpokenInMeeting() {
-                let sumOfTimeInMeeting = 0;
+                let sumOfTimeSpentSpeaking = 0;
                 Object.values(this.participant['otherParticipantsSpeakingTime']).forEach(element => {
-                    sumOfTimeInMeeting += element;
+                    sumOfTimeSpentSpeaking += element;
                 });
-                this.totalSpeakingtime = sumOfTimeInMeeting;
-            }
+                this.totalSpeakingtime = sumOfTimeSpentSpeaking;
+            },
         }
     }
 </script>

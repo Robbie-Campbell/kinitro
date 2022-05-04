@@ -18,7 +18,7 @@
                     'title': 'How others have performed',
                     'colors': ['#FFFFFF', '#000000'], 'id': "otherParticipants", watch: true},
                 parsedOtherUsers: {},
-                hasNotBeenParsed: true
+                hasNotBeenParsed: true,
             }
         },
         props: ['participant'],
@@ -40,16 +40,20 @@
                 this.updateSetup();
                 this.updateTimeSpoken();
                 this.data = {
-                    'values': this.getOtherUserDetails('timeSpoken'),
+                    'values': this.getOtherUserDetails('percentage'),
                     'timeValues': this.getOtherUserDetails('timeSpoken')
                 }
             },
             parseOtherUsers() {
                 let i = 1;
                 Object.values(this.participant['otherParticipantsSpeakingTime']).forEach(element => {
-                    this.parsedOtherUsers[i] = {'label': 'Participant ' + i,
-                                                'timeSpoken': element, 
-                                                'color': '#'+(Math.random()*0xFFFFFF<<0).toString(16)};
+                    if (element > 100){
+                        this.parsedOtherUsers[i] = {'label': 'Participant ' + i,
+                                                    'timeSpoken': element, 
+                                                    'color': '#'+(Math.random()*0xFFFFFF<<0).toString(16),
+                                                    'percentage': Math.round(element / this.sumOfTimeSpentSpeaking() * 100)
+                        };
+                    }
                     i++;
                 });
             },
@@ -63,7 +67,10 @@
             updateTimeSpoken(){
 let             i = 1;
                 Object.values(this.participant['otherParticipantsSpeakingTime']).forEach(element => {
-                    this.parsedOtherUsers[i]['timeSpoken'] = element;                    
+                    if (this.parsedOtherUsers[i]) {
+                        this.parsedOtherUsers[i]['timeSpoken'] = element;
+                        this.parsedOtherUsers[i]['percentage'] = Math.round(element / this.sumOfTimeSpentSpeaking() * 100);                   
+                    }
                     i++;
                 });            
             },
@@ -71,7 +78,15 @@ let             i = 1;
                 this.setup ={'labels': this.getOtherUserDetails('label'),
                     'title': 'How much time others have spoken',
                     'colors': this.getOtherUserDetails('color'), 'id': "otherParticipants"}
-            }
+            },
+            sumOfTimeSpentSpeaking() {
+                let sumOfTimeSpentSpeaking = 0;
+                Object.values(this.participant['otherParticipantsSpeakingTime']).forEach(element => {
+                    sumOfTimeSpentSpeaking += element;
+                });
+                console.log(sumOfTimeSpentSpeaking);
+                return sumOfTimeSpentSpeaking;
+            },
         }
     }
 </script>
