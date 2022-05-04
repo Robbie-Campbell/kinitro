@@ -24,7 +24,7 @@ namespace Microsoft.Psi.TeamsBot
             this.MeetingTotalTimeInMeeting = 0;
             this.IsSpeaking = 0;
             this.ParticipantId = string.Empty;
-            this.OtherParticipantSpeakingTime = new List<double>();
+            this.OtherParticipantsSpeakingTime = new Dictionary<string, double>();
         }
 
         /// <summary>
@@ -60,8 +60,7 @@ namespace Microsoft.Psi.TeamsBot
         /// <summary>
         /// Gets the time other participants have spent speaking.
         /// </summary>
-        public List<double> OtherParticipantsSpeakingTime { get; }
-
+        public Dictionary<string, double> OtherParticipantsSpeakingTime { get; }
 
         /// <summary>
         /// Gets or sets the average time spent speaking in a meeting.
@@ -100,10 +99,7 @@ namespace Microsoft.Psi.TeamsBot
                 throw new ArgumentNullException(nameof(participant));
             }
 
-            if (participant.ParticipantId != this.ParticipantId)
-            {
-                this.OtherParticipantsSpeakingTime.Add(participant.TimeSpoken);
-            }
+            this.OtherParticipantsSpeakingTime[participant.ParticipantId] = participant.TimeSpoken;
         }
     }
 }

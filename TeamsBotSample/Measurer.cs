@@ -57,6 +57,7 @@ namespace Microsoft.Psi.TeamsBot
             if (staticParticipants.ContainsKey(id))
             {
                 staticParticipants[id].ParticipantName = name;
+                staticParticipants[id].ParticipantId = id;
                 linkData[id].Name = name;
             }
         }
@@ -120,6 +121,7 @@ namespace Microsoft.Psi.TeamsBot
                 {
                     StaticParticipants.Add(frame.Key, new StaticParticipant());
                     StaticParticipants[frame.Key].TimeInMeeting.Start();
+
                     string webLink = "https://localhost:80" + frame.Key;
                     linkData.Add(frame.Key, new LinkData());
                     linkData[frame.Key].Link = webLink;

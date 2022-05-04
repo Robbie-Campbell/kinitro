@@ -34,7 +34,7 @@
             applyDataToPie() {
                 const ctx = document.getElementById(this.setup.id);
                 this.pie = new Chart(ctx, {
-                    type: 'doughnut',
+                    type: 'pie',
                     data: {
                         labels: this.setup.labels,
                         datasets: [{
@@ -47,7 +47,6 @@
                     options: {
                         title: {
                             display: false,
-                            text: 'Breakdown of talking time'
                         },
                         responsive: true,
                         maintainAspectRatio: true

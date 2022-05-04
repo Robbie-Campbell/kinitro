@@ -104,29 +104,19 @@
             Initializes a new instance of the <see cref="T:Microsoft.Psi.TeamsBot.StaticParticipant"/> class.
             </summary>
         </member>
+        <member name="P:Microsoft.Psi.TeamsBot.StaticParticipant.ParticipantId">
+            <summary>
+            Gets or sets the participant ID.
+            </summary>
+        </member>
         <member name="P:Microsoft.Psi.TeamsBot.StaticParticipant.TimeSpoken">
             <summary>
             Gets or sets time spent speaking.
             </summary>
         </member>
-        <member name="P:Microsoft.Psi.TeamsBot.StaticParticipant.MeetingId">
-            <summary>
-            Gets or sets meeting ID.
-            </summary>
-        </member>
         <member name="P:Microsoft.Psi.TeamsBot.StaticParticipant.TimeInMeeting">
             <summary>
             Gets or sets time spent in meeting.
-            </summary>
-        </member>
-        <member name="P:Microsoft.Psi.TeamsBot.StaticParticipant.MeetingTotalTimeSpoken">
-            <summary>
-            Gets or sets the average time spent speaking in a meeting.
-            </summary>
-        </member>
-        <member name="P:Microsoft.Psi.TeamsBot.StaticParticipant.MeetingTotalTimeInMeeting">
-            <summary>
-            Gets or sets the average time spent speaking in a meeting.
             </summary>
         </member>
         <member name="P:Microsoft.Psi.TeamsBot.StaticParticipant.ParticipantName">
@@ -144,11 +134,27 @@
             Gets or sets a value indicating whether the participant is currently speaking.
             </summary>
         </member>
+        <member name="P:Microsoft.Psi.TeamsBot.StaticParticipant.OtherParticipantsSpeakingTime">
+            <summary>
+            Gets the time other participants have spent speaking.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Psi.TeamsBot.StaticParticipant.MeetingTotalTimeInMeeting">
+            <summary>
+            Gets or sets the average time spent speaking in a meeting.
+            </summary>
+        </member>
         <member name="M:Microsoft.Psi.TeamsBot.StaticParticipant.SetMeetingAverageForTimeSpeaking(System.Collections.Generic.Dictionary{System.String,Microsoft.Psi.TeamsBot.StaticParticipant})">
             <summary>
             Establshes the average amount of time spoken for the meeting.
             </summary>
             <param name="participants">All of the meeting participants.</param>
+        </member>
+        <member name="M:Microsoft.Psi.TeamsBot.StaticParticipant.SetAnotherParticipantsSpeakingTime(Microsoft.Psi.TeamsBot.StaticParticipant)">
+            <summary>
+            Adds time spoken by other participants.
+            </summary>
+            <param name="participant">The time spent speaking by a participant.</param>
         </member>
         <member name="T:Microsoft.Psi.TeamsBot.ParticipantEngagementBotBase">
             <summary>

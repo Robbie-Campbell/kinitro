@@ -13,8 +13,10 @@
         },
         data() {
             return {
-                data: {},
-                setup: {'labels': ["Time Spent Speaking", "Time Spent In Meeting"],
+                data: {
+                    totalSpeakingtime: 1,
+                },
+                setup: {'labels': ["Time Spent Speaking", "Time Not Speaking"],
                     'title': 'Meeting Average for Time Spent Speaking',
                     'colors': ['#00003f', '#00008b'], 'id': "meetingPie"},
             }
@@ -28,11 +30,19 @@
         },
         methods: {
             updateData() {
-                var percentageTimeSpeaking = this.participant['meetingTotalTimeSpoken'] / this.participant['meetingTotalTimeInMeeting'] * 100;
+                this.getTotalTimeSpokenInMeeting();
+                var percentageTimeSpeaking = this.totalSpeakingtime / this.participant['meetingTotalTimeInMeeting'] * 100;
                 this.data = {
                     'values': [Math.round(percentageTimeSpeaking), 100 - Math.round(percentageTimeSpeaking)],
-                    'timeValues': [this.participant['meetingTotalTimeSpoken'], this.participant['meetingTotalTimeInMeeting']]
+                    'timeValues': [this.totalSpeakingtime, this.participant['meetingTotalTimeInMeeting'] - this.totalSpeakingtime]
                 }     
+            },
+            getTotalTimeSpokenInMeeting() {
+                let sumOfTimeInMeeting = 0;
+                Object.values(this.participant['otherParticipantsSpeakingTime']).forEach(element => {
+                    sumOfTimeInMeeting += element;
+                });
+                this.totalSpeakingtime = sumOfTimeInMeeting;
             }
         }
     }
