@@ -43,6 +43,11 @@
                 this.user = this.name;
             }
         },
+
+        /**
+         * Checks for a successful connection to the API and updates data
+         * on a positive response.
+         */
         mounted() {
             this.$nextTick(() => {
                 var checkForUpdate = window.setInterval(() => {
@@ -52,6 +57,15 @@
                 }, 2500)
             });
         },
+
+        /**
+         * participant: The participant data
+         * attemps: Number of attempted connections
+         * loading: Set to false on successful connection
+         * user: The name of the user
+         * numberTimesSpoken: The number of times the user has spoken.
+         * 
+         */
         data() {
             return {
                 participant: null,
@@ -62,6 +76,10 @@
             }
         },
         methods: {
+
+            /**
+             * Updates the participant attribute with the data recieved from the api, 
+             */
             updateData() {
                 const id = this.$route.params.slug;
                 return axios
@@ -72,22 +90,42 @@
                         this.participant = null;
                     }).finally(() => (this.loading = false))
             },
+
+            /**
+             * Stops the data stream
+             */
             checkForSuccessfulConnection(timeOut) {
                 if (!this.participant && this.attempts == 2) {
                     clearInterval(timeOut);
                 }
             },
+
+            /**
+             * Checks to see if requests should be continued.
+             */
             searchingForUserOrUserHasBeenFound() {
                 return this.attempts < 2 || this.participant['timeSpoken'];
             },
+
+            /**
+             * Updates the number of times the participant has spoken.
+             */
             updateNumberTimesSpoken() {
                 this.numberTimesSpoken = Math.round(parseInt(this.participant['numberOfTimesSpoken']));
             },
+
+            /**
+             * Updates the name in the parent component.
+             */
             updatePropInParent() {
                 this.loading = false;
                 if (this.participant['timeSpoken'])
                     this.$emit("nameRecieved", this.participant['participantName']);
             },
+
+            /**
+             * Updates all of the data in this component.
+             */
             updateAllData() {
                 this.updateData();
                 if (this.participant['timeSpoken']) {

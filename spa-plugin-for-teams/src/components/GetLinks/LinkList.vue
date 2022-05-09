@@ -22,6 +22,12 @@ export default {
         Link,
         PulseLoader
     },
+
+    /**
+     * links: the list of links
+     * searchQuery: The query param for the API.
+     * searching: Whether the app is currently searching for links.
+     */
     data() {
         return {
             links: {},
@@ -30,6 +36,10 @@ export default {
         }
     },
     methods: {
+
+        /**
+         * Gets all of the current links containing the searcj parameter.
+         */
         getCurrentLinks() {
             this.searching = true;
             return axios

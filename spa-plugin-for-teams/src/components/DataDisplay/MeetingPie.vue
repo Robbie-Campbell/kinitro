@@ -11,6 +11,11 @@
         components: {
             'PieBase': PieBase,
         },
+
+        /**
+         * data: The data to be passed into the piebase component
+         * setup: The setup information for the pie component.
+         */
         data() {
             return {
                 data: {
@@ -21,7 +26,15 @@
                     'colors': ['#93003a', '#ff005e'], 'id': "meetingPie"},
             }
         },
+
+        /**
+         * The prop data passed from the parent component.
+         */
         props: ['participant'],
+
+        /**
+         * Checks to see if the participant exists and then updates data.
+         */
         watch: {
             participant: function() {
                 if (this.participant['timeSpoken'])
@@ -29,6 +42,10 @@
             }
         },
         methods: {
+
+            /**
+             * Updates the piebase with the newly requested data.
+             */
             updateData() {
                 this.getTotalTimeSpokenInMeeting();
                 var percentageTimeSpeaking = this.totalSpeakingtime / this.participant['meetingTotalTimeInMeeting'] * 100;
@@ -37,6 +54,10 @@
                     'timeValues': [this.totalSpeakingtime, this.participant['meetingTotalTimeInMeeting'] - this.totalSpeakingtime]
                 }     
             },
+
+            /**
+             * Gets the meeting total of all participants speaking time.
+             */
             getTotalTimeSpokenInMeeting() {
                 let sumOfTimeSpentSpeaking = 0;
                 Object.values(this.participant['otherParticipantsSpeakingTime']).forEach(element => {

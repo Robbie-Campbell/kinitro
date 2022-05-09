@@ -11,6 +11,11 @@
         components: {
             'PieBase': PieBase,
         },
+
+        /**
+         * data: The data to be passed into the piebase component
+         * setup: The setup information for the pie component.
+         */
         data() {
             return {
                 data: {},
@@ -19,7 +24,15 @@
                     'colors': ['#00429d', '#5cc6b2'], 'id': "individualPie"},
             }
         },
+
+        /**
+         * The prop data passed from the parent component.
+         */
         props: ['participant'],
+
+        /**
+         * Checks to see if the participant exists and then updates data.
+         */
         watch: {
             participant: function() {
                 if (this.participant['timeSpoken'])
@@ -27,6 +40,10 @@
             }
         },
         methods: {
+
+            /**
+             * Updates the piebase with the newly requested data.
+             */
             updateData() {
                 var percentageTimeSpeaking = this.participant['timeSpoken'] / this.participant['timeInMeeting']['elapsedMilliseconds'] * 100;
                 this.data = {
