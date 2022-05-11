@@ -56,7 +56,7 @@ namespace PsiBot.Services
             //app.UseHttpsRedirection();
             //app.UseExceptionHandler();
             app.UseCors(
-                options => options.WithOrigins("http://localhost:8080", "http://192.168.0.64:8080", "https://participation-measurer-rr56qis6kq-nw.a.run.app").AllowAnyMethod()
+                options => options.WithOrigins("http://localhost", "http://192.168.0.64", "https://kinitro-bot-rr56qis6kq-uc.a.run.app").AllowAnyMethod()
             );
             app.UseMvc();
         }

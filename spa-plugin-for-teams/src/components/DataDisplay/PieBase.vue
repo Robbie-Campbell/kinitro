@@ -21,20 +21,33 @@
                 this.updatePieData();
             }
         },
+
+        /**
+         * pie: The chart.js component
+         * id: The id given to the chart component.
+         */
         data() {
             return {
                 pie: null,
                 id: this.setup.id
             }
         },
+
+        /**
+         * Updates the pie chart with data.
+         */
         mounted() {
             this.applyDataToPie();
         },
         methods: {
+
+            /**
+             * Sets the pie chart with all necessary data.
+             */
             applyDataToPie() {
                 const ctx = document.getElementById(this.setup.id);
                 this.pie = new Chart(ctx, {
-                    type: 'doughnut',
+                    type: 'pie',
                     data: {
                         labels: this.setup.labels,
                         datasets: [{
@@ -47,19 +60,36 @@
                     options: {
                         title: {
                             display: false,
-                            text: 'Breakdown of talking time'
                         },
                         responsive: true,
                         maintainAspectRatio: true
                     }
                 })
             },
+
+            /**
+             * Updates all pie chart data.
+             */
             updatePieData() {
                 if (this.data.values) {
+                    console.log(this.data);
                     this.pie.data.datasets[0].data = this.data.values;
+                    this.updatePieSetup();
                 }
                 this.pie.update();
             },
+
+            /**
+             * Updates the setup of the pie chart.
+             */
+            updatePieSetup() {
+                this.pie.data.labels = this.setup.labels;
+                this.pie.data.datasets[0].backgroundColor = this.setup.colors;
+            },
+
+            /**
+             * Converts the milliseconds into readable time values.
+             */
             msToTime(s) {
 
                 // Pad to 2 or 3 digits, default is 2
