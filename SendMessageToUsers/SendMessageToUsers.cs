@@ -23,11 +23,11 @@ namespace SendMessageToUsers
 
             // Multi-tenant apps can use "common",
             // single-tenant apps must use the tenant ID from the Azure portal
-            var tenantId = "a41e10c9-a609-4413-bcbc-72c10363381b";
+            var tenantId = "";
 
             // Values from app registration
-            var clientId = "6a3e328a-bd79-44d5-ac94-d3abdf51e3c0";
-            var clientSecret = "c.U7Q~ysNbQ3vlwYOPXWkoTUTSpOPRInT73SY";
+            var clientId = "";
+            var clientSecret = "";
 
             // using Azure.Identity;
             var options = new TokenCredentialOptions
